@@ -1,6 +1,8 @@
 // content.js
 
-var names = [
+window.mute = {};
+
+window.mute.names = [
 "Anthony",
 "Lawrence",
 "Richard",
@@ -102,34 +104,46 @@ var names = [
 "Mike"
 ];
 
+window.mute.tweetFix = function () {
+  console.log("tweetFix runs")
+  var tweets = $(".tweet");
+
+  $.each(tweets, function(index, tweet){
+    var tweetName = $(tweet).attr("data-name");
+    $.each(window.mute.names, function(index, name){
+
+      var regex = new RegExp(name);
+      var match = regex.test(tweetName);
+
+      if (match) {
+        console.log(match)
+        console.log(tweetName);
+        console.log(name);
+        $(tweet).css("background-color", "red");
+        }
+    });
+  });
+};
+
+window.mute.imageHide = function () {
+  var images = $("img");
+
+  $.each(images, function(index, image){
+    console.log(image);
+  });
+
+};
+
+
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.status === "clicked_browser_action" ) {
-
-      var tweets = $(".tweet");
-
-      $.each(tweets, function(index, tweet){
-        var tweetName = $(tweet).attr("data-name");
-        $.each(names, function(index, name){
-
-          var regex = new RegExp(name);
-          var match = regex.test(tweetName);
-
-          if (match) {
-            console.log(match)
-            console.log(tweetName);
-            console.log(name);
-            $(tweet).css("background-color", "red")
-
-          }
-
-        });
-
-      });
-
-      console.log("done!")
-      chrome.runtime.sendMessage({"status": "page_modified"});
-
+      window.mute.tweetFix();
+      window.mute.imageHide();
     };
+
+    console.log("done!");
+    chrome.runtime.sendMessage({"status": "page_modified"});
+
   }
 );
