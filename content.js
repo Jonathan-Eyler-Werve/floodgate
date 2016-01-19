@@ -132,6 +132,10 @@ window.mute.imageHide = function () {
 
   $.each(images, function(index, image){
     if ($(image).width() > 20) {
+
+      $(image).attr("width", $(image).width());
+      $(image).attr("height", $(image).height());
+      $(image).css("background-color", "pink");
       $(image).attr("src", "");
       console.log("hiding this image:");
       console.log(image);
