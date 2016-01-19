@@ -126,10 +126,25 @@ window.mute.tweetFix = function () {
 };
 
 window.mute.imageHide = function () {
+  console.log("mute.imageHide runs")
   var images = $("img");
+  var divs = $("div");
 
   $.each(images, function(index, image){
-    console.log(image);
+    if ($(image).width() > 20) {
+      $(image).attr("src", "");
+      console.log("hiding this image:");
+      console.log(image);
+    }
+  });
+
+  $.each(divs, function(index, div){
+
+    if ($(div).css("background-image") !== "none" ){
+      console.log('hiding', $(div).css("background-image"));
+      $(div).css("background-image", "url('')");
+    };
+
   });
 
 };
@@ -138,7 +153,7 @@ window.mute.imageHide = function () {
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.status === "clicked_browser_action" ) {
-      window.mute.tweetFix();
+      // window.mute.tweetFix();
       window.mute.imageHide();
     };
 
