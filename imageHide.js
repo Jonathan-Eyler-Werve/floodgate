@@ -1,10 +1,10 @@
 // imageHide.js
 if (window.mute === undefined) { window.mute = {} };
 
-window.mute.imageHide = function () {
+window.mute.imageHide = function (target) {
   console.log("mute.imageHide runs")
-  var images = $("img");
-  var elements = $("div, a, span, li, figure");
+  var images = $(target + " img", target + "[type='image']");
+  var elements = $(target + " div", target + " a", target + " span", target + " li", target + " figure");
 
   $.each(images, function(index, image){
     if ($(image).width() > 20) {
@@ -22,7 +22,7 @@ window.mute.imageHide = function () {
   $.each(elements, function(index, element){
 
     if ($(element).css("background-image") !== "none" ){
-      console.log('hiding', $(element).css("background-image"));
+      console.log('hiding background-image at', $(element).css("background-image"));
       $(element).css("background-image", "url('')");
       $(element).css("background-color", "#E0F8E0");
     };
