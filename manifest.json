@@ -12,7 +12,13 @@
       "matches": [
         "<all_urls>"
       ],
-      "js": ["jquery-2.2.0.min.js", "content.js"]
+      "js": [
+        "jquery-2.2.0.min.js",
+        "content.js",
+        "imageHide.js",
+        "tweet.js",
+        "words.js"
+      ]
     }
   ],
 
