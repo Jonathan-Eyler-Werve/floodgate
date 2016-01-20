@@ -128,15 +128,16 @@ window.mute.tweetFix = function () {
 window.mute.imageHide = function () {
   console.log("mute.imageHide runs")
   var images = $("img");
-  var elements = $("div, a, span, li");
+  var elements = $("div, a, span, li, figure");
 
   $.each(images, function(index, image){
     if ($(image).width() > 20) {
 
       $(image).attr("width", $(image).width());
       $(image).attr("height", $(image).height());
-      $(image).css("background-color", "pink");
+      $(image).css("background-color", "#A9F5A9");
       $(image).attr("src", "");
+      $(image).attr("srcset", "");
       console.log("hiding this image:");
       console.log(image);
     }
@@ -147,7 +148,7 @@ window.mute.imageHide = function () {
     if ($(element).css("background-image") !== "none" ){
       console.log('hiding', $(element).css("background-image"));
       $(element).css("background-image", "url('')");
-      $(element).css("background-color", "pink");
+      $(element).css("background-color", "#E0F8E0");
     };
 
   });
