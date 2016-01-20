@@ -29,10 +29,10 @@ window.mute.tweetTriggerTextFilter = function () {
 
   tweets.each( function(index, tweet){
 
-    console.log(tweet);
+    // console.log(tweet);
 
-    var tweetContent = tweet.$(".tweet-text");
-    console.log(tweetContent);
+    var tweetContent = $(tweet).find(".tweet-text");
+    console.log("tweetContent is", tweetContent);
 
     $.each(window.mute.triggerWords, function(index, word){
 
