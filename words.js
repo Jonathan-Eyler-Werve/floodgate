@@ -105,5 +105,5 @@ window.mute.names = [
 ];
 
 window.mute.triggerWords = [
-  "the"
+  "ORD"
 ];

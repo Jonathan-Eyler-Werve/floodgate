@@ -1,4 +1,5 @@
 // tweet.js
+
 if (window.mute === undefined) { window.mute = {} };
 
 window.mute.tweetNamesFilter = function () {
@@ -14,16 +15,13 @@ window.mute.tweetNamesFilter = function () {
       var match = regex.test(tweetName);
 
       if (match) {
-        console.log(match)
-        console.log(tweetName);
-        console.log(name);
         $(tweet).css("background-color", "red");
         }
     });
   });
 };
 
-window.mute.tweetTriggerTextFilter = function () {
+window.mute.tweetTriggerTextFilter = function (triggerWords) {
   console.log("tweetTriggerTextFilter runs")
   var tweets = $(".tweet");
 
@@ -31,18 +29,15 @@ window.mute.tweetTriggerTextFilter = function () {
 
     // console.log(tweet);
 
-    var tweetContent = $(tweet).find(".tweet-text");
+    var tweetContent = $(tweet).find(".tweet-text").text();
     console.log("tweetContent is", tweetContent);
 
-    $.each(window.mute.triggerWords, function(index, word){
+    $.each(triggerWords, function(index, word){
 
       var regex = new RegExp(word);
       var match = regex.test(tweetContent);
 
       if (match) {
-        console.log(match)
-        console.log(tweetContent);
-        console.log(word);
         $(tweet).css("background-color", "red");
         }
     });

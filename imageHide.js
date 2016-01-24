@@ -1,4 +1,5 @@
 // imageHide.js
+
 if (window.mute === undefined) { window.mute = {} };
 
 window.mute.imageHide = function (target) {
