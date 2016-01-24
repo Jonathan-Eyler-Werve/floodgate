@@ -15,7 +15,7 @@ window.mute.tweetNamesFilter = function () {
       var match = regex.test(tweetName);
 
       if (match) {
-        $(tweet).css("background-color", "red");
+        $(tweet).css("background-color", "#666666");
         }
     });
   });
@@ -29,7 +29,7 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
     // console.log(tweet);
 
-    var tweetContent = $(tweet).find(".tweet-text").text();
+    var tweetContent = $(tweet).find(".tweet-text").text().toLowerCase();
     console.log("tweetContent is", tweetContent);
 
     $.each(triggerWords, function(index, word){
@@ -38,7 +38,10 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
       var match = regex.test(tweetContent);
 
       if (match) {
-        $(tweet).css("background-color", "red");
+        $(tweet).css("background-color", "#cccccc");
+        $(tweet).css("color", "#999999");
+        // window.mute.imageHide(tweet);
+
         }
     });
   });

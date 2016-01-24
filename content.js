@@ -2,10 +2,16 @@
 
 if (window.mute === undefined) { window.mute = {} };
 
-window.mute.tweetTriggerTextFilter(window.mute.triggerWords);
+
+$(function() {
+
+  // window.mute.tweetTriggerTextFilter(window.mute.triggerWords);
+  var filterIntervalID = window.setInterval(window.mute.tweetTriggerTextFilter(window.mute.triggerWords), 1000);
+
+});
 
 
-var filterIntervalID = window.setInterval(window.mute.tweetTriggerTextFilter(window.mute.triggerWords), 1000}
+
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {

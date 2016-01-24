@@ -4,7 +4,7 @@ if (window.mute === undefined) { window.mute = {} };
 
 window.mute.imageHide = function (target) {
   console.log("mute.imageHide runs")
-  var images = $(target + " img", target + "[type='image']");
+  var images = $(target + " img", target + " [type='image']");
   var elements = $(target + " div", target + " a", target + " span", target + " li", target + " figure");
 
   $.each(images, function(index, image){
