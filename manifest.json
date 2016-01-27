@@ -16,6 +16,7 @@
         "jquery-2.2.0.min.js",
         "content.js",
         "imageHide.js",
+        "tests.js",
         "tweet.js",
         "words.js"
       ]

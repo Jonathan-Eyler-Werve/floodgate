@@ -1,11 +1,14 @@
 // imageHide.js
 
+// takes a jquery object, modifies DOM element, returns nothing
+
 if (window.mute === undefined) { window.mute = {} };
 
 window.mute.imageHide = function (target) {
-  console.log("mute.imageHide runs")
-  var images = $(target + " img", target + " [type='image']");
-  var elements = $(target + " div", target + " a", target + " span", target + " li", target + " figure");
+  console.log("mute.imageHide runs");
+
+  var images = window.mute.imageHide.getImages(target);
+  var elements = window.mute.imageHide.getElements(target);
 
   $.each(images, function(index, image){
     if ($(image).width() > 20) {
@@ -30,4 +33,13 @@ window.mute.imageHide = function (target) {
 
   });
 
+  console.log("mute.imageHide completes")
+};
+
+window.mute.imageHide.getImages = function (target) {
+  return target.find("img");
+};
+
+window.mute.imageHide.getElements = function (target) {
+  return target.find("*"); // performance optimization here?
 };

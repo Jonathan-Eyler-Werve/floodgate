@@ -15,7 +15,7 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
       var match = regex.test(tweetContent);
 
       if (match) {
-        console.log("matched:", tweetContent, "+", word)
+        console.log("MATCHED", word, "WITH:", tweetContent);
         $(tweet).css("background-color", "#cccccc");
         $(tweet).css("color", "#999999");
 
