@@ -105,5 +105,6 @@ window.mute.names = [
 ];
 
 window.mute.triggerWords = [
-  "ordcamp"
+  "ordcamp",
+  "the"
 ];

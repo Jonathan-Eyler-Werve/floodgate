@@ -27,17 +27,16 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
   tweets.each( function(index, tweet){
 
-    // console.log(tweet);
-
     var tweetContent = $(tweet).find(".tweet-text").text().toLowerCase();
-    console.log("tweetContent is", tweetContent);
+    // console.log("tweetContent is:", tweetContent);
 
     $.each(triggerWords, function(index, word){
-
+      // console.log("filtering for:", word)
       var regex = new RegExp(word);
       var match = regex.test(tweetContent);
 
       if (match) {
+        console.log("matched:", tweetContent, "+", word)
         $(tweet).css("background-color", "#cccccc");
         $(tweet).css("color", "#999999");
         // window.mute.imageHide(tweet);

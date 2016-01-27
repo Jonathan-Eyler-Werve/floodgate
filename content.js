@@ -5,7 +5,7 @@ if (window.mute === undefined) { window.mute = {} };
 
 $(function() {
 
-  // window.mute.tweetTriggerTextFilter(window.mute.triggerWords);
+  window.mute.tweetTriggerTextFilter(window.mute.triggerWords);
   var filterIntervalID = window.setInterval(window.mute.tweetTriggerTextFilter(window.mute.triggerWords), 1000);
 
 });
