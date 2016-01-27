@@ -11,21 +11,15 @@ $(function() {
 });
 
 
-
-
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.status === "clicked_browser_action" ) {
 
-      clearInterval(filterIntervalID)
-      console.log("Mute extention disabled!");
-      // window.mute.tweetTriggerTextFilter(window.mute.triggerWords);
-      // window.mute.tweetNamesFilter();
-      // window.mute.imageHide("body");
+      // clearInterval(filterIntervalID)
+
     };
 
-    // console.log("done!");
-    // chrome.runtime.sendMessage({"status": "page_modified"});
+    // chrome.runtime.sendMessage({"foo-message": "message contents"});
 
   }
 );
