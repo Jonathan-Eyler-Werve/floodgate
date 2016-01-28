@@ -109,5 +109,12 @@ window.mute.triggerWords = [
  "faggot",
  "fag ",
  "PRfags",
- "sjw's"
+ "sjw's",
+ "fat face",
+ "bitch",
+ "kia",
+ "not a baby like you",
+ "you special snowflake",
+ "are you triggered",
+ "apple"
 ];
