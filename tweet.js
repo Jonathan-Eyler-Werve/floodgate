@@ -4,7 +4,7 @@ if (window.mute === undefined) { window.mute = {} };
 
 window.mute.tweetTriggerTextFilter = function (triggerWords) {
   console.log("tweetTriggerTextFilter runs")
-  var tweets = $(".tweet");
+  var tweets = $(".tweet, .stream-item-content");
 
   tweets.each( function(index, tweet){
 
@@ -16,9 +16,10 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
       if (match) {
         console.log("MATCHED", word, "WITH:", tweetContent);
-        $(tweet).css("background-color", "#cccccc");
+        $(tweet).css("background-color", "#E6F8E0");
         $(tweet).css("color", "#999999");
-
+        $(tweet).find("a").css("color", "#888888")
+        window.mute.imageHide(tweet);
         }
     });
   });

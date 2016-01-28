@@ -12,7 +12,6 @@ console.log(window.mute.imageHide !== undefined);
 console.log(window.mute.triggerWords !== undefined);
 
 console.log("--- imageHide.js ---");
-
 var stub = $("body");
 console.log(".getImages()");
 console.log( window.mute.imageHide.getImages(stub) instanceof jQuery);
@@ -20,7 +19,10 @@ console.log( window.mute.imageHide.getImages(stub).length > 0 ); // page depende
 console.log(".getElements()");
 console.log( window.mute.imageHide.getElements(stub) instanceof jQuery);
 console.log( window.mute.imageHide.getElements(stub).length > 0 ); // page dependency
+console.log(".getHeight()");
+console.log( typeof window.mute.imageHide.getHeight($("img")[0]) === "number");
+
 console.log(".imageHide()");
-window.mute.imageHide($(".tweet"));
+// window.mute.imageHide($(".tweet, .stream-item-content"));
 
 });

@@ -105,6 +105,9 @@ window.mute.names = [
 ];
 
 window.mute.triggerWords = [
-  "ordcamp",
-  "the"
+ "sjw",
+ "faggot",
+ "fag ",
+ "PRfags",
+ "sjw's"
 ];
