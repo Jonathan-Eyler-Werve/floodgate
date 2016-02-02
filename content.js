@@ -2,7 +2,6 @@
 
 if (window.mute === undefined) { window.mute = {} };
 
-
 $(function() {
 
   // window.mute.tweetTriggerTextFilter(window.mute.triggerWords);

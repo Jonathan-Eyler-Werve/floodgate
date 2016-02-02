@@ -16,6 +16,7 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
       if (match) {
         window.mute.tweetTriggerTextFilter.hideStuff(tweet, tweetContent)
+        chrome.runtime.sendMessage({"filter-event": "true"});
         }
     });
   });
@@ -24,7 +25,7 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
 window.mute.tweetTriggerTextFilter.hideStuff = function (tweet, tweetContent) {
   $(tweet).css("background-color", "#E6F8E0");
-  $(tweet).css("border-color", "#D9E6D4");
+  $(tweet).css("border-color", "#CFE9C7");
   $(tweet).css("color", "#B8CDB9");
   $(tweet).find("a").css("color", "#A6B6A7")
   $(tweet).find("strong, b, .tweet-text").css("color", "#B8CDB9")

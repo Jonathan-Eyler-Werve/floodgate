@@ -136,5 +136,6 @@ window.mute.triggerWords = [
  "stop being fat",
  "race card",
  "matriarchy",
- "fuckface"
+ "fuckface",
+ "#gamergate"
 ];
