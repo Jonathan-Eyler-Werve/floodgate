@@ -5,7 +5,7 @@
 if (window.mute === undefined) { window.mute = {} };
 
 window.mute.imageHide = function (target) {
-  console.log("mute.imageHide runs");
+  // console.log("mute.imageHide runs");
   target = $(target)
 
   var elements, images, minSize;
@@ -36,7 +36,7 @@ window.mute.imageHide = function (target) {
 
   });
 
-  console.log("mute.imageHide completes")
+  // console.log("mute.imageHide completes")
 };
 
 window.mute.imageHide.getImages = function (target) {

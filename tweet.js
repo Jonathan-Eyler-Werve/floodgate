@@ -3,7 +3,10 @@
 if (window.mute === undefined) { window.mute = {} };
 
 window.mute.tweetTriggerTextFilter = function (triggerWords) {
-  console.log("tweetTriggerTextFilter runs")
+  // console.log("tweetTriggerTextFilter runs")
+
+  window.mute.tweetTriggerTextFilter.matchFound = false
+
   var tweets = $(".tweet, .stream-item-content, .QuoteTweet");
 
   tweets.each( function(index, tweet){
@@ -16,10 +19,13 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
       if (match) {
         window.mute.tweetTriggerTextFilter.hideStuff(tweet, tweetContent)
-        chrome.runtime.sendMessage({"filter-event": "true"});
+        window.mute.tweetTriggerTextFilter.matchFound = true
         }
     });
   });
+
+  if (window.mute.tweetTriggerTextFilter.matchFound === true)
+    chrome.runtime.sendMessage({filterEvent: "matchFound"});
 };
 
 

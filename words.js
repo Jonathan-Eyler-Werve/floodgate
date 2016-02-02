@@ -114,7 +114,7 @@ window.mute.triggerWords = [
  "fat face",
  "bitch",
  "KiA",
- "not a baby like you",
+ "baby like you",
  "you special snowflake",
  "are you triggered",
  "CIS SCUM",
@@ -126,6 +126,7 @@ window.mute.triggerWords = [
  "demasculinized",
  "slave mindset",
  "nigga",
+ "nigger",
  "white knight",
  "weak men",
  "pussies",
@@ -137,5 +138,6 @@ window.mute.triggerWords = [
  "race card",
  "matriarchy",
  "fuckface",
- "#gamergate"
+ "#gamergate",
+ "apple"
 ];
