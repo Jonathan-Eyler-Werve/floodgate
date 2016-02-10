@@ -5,7 +5,7 @@
 
 ## Summary
 
-A browser extension allows User to set rules for content display, muting unwanted content on the Web, including social media websites. Twitter, Facebook, Reddit, newspapers, blogs can be filtered.  
+A browser extension that allows a user to set rules for content display, muting unwanted content on the Web, including social media websites. Twitter, Facebook, Reddit, newspapers, and blogs can be filtered.  
 
 We are Jonathan Eyler-Werve and a few collaborators in the mental health and software engineering fields.
 
@@ -18,7 +18,7 @@ WEBSITE: http://CivicWorkbench.com
 Unwanted content online takes many forms. This tool allows users to suppress content based on rules they set, mitigating some of the harm caused by... 
 
 - Background-noise hostility from people on the web, such as that routinely sent to women and people of color. 
-- Specific triggers which could be helpful public discourse, but unwanted to some people, some times; such as trauma survivors muting triggers.  
+- Specific triggers which could be helpful public discourse, but unwanted to some people sometimes, such as trauma survivors muting triggers.  
 - People undergoing pile-on harassment, who need to communicate to gather support or just exist online. 
 
 ## How it might work 
@@ -38,7 +38,7 @@ I open Chrome over breakfast to read the news. Because it's before 9am, my rules
 - Regex-based filtering for specific trigger words or phrases is the most basic and limited form of content analysis. 
 - Filtering content is easier than filtering behavior, but behavior is more impactful. A hostile user can send a threatenting message ("I'll meet you at your office") which passes any content filter.  
 - Mobile apps work differently than browsers; to work on mobile, User would need to switch to the mobile web version of Twitter, etc. which is usually full featured but slower. 
-- We have an idea of what [effective community moderation](https://coralproject.net/advice-for-the-accidental-community-manager/) looks like, and filtering isn't it. We are not attempting to examine root causes, build empathy-enabling platforms, or reconcile warring factions. We're mitigating one vector for abuse so that people can continue to engage with communities and (we hope) build communities where abuse isn't normal. 
+- We have an idea of what [effective community moderation](https://coralproject.net/advice-for-the-accidental-community-manager/) looks like, and filtering isn't it. This tool is not attempting to examine root causes, build empathy-enabling platforms, or reconcile warring factions. This tool exists to mitigate one vector for abuse so that people can continue to engage with communities and (we hope) build communities where abuse isn't normal. 
 
 ## More sophisticated approaches 
 
