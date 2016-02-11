@@ -15,6 +15,12 @@ chrome.runtime.onMessage.addListener(
 
     if ( request.filterEvent === "matchFound" ) {
       console.log("Message: ", request.filterEvent );
+
+      // sets icon to Active state
+      chrome.browserAction.setIcon({
+        path : "images/icon-active.png",
+        tabId: sender.tab.id
+      });
     }
 
   });

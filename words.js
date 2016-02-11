@@ -139,5 +139,5 @@ window.mute.triggerWords = [
  "matriarchy",
  "fuckface",
  "#gamergate",
- "apple"
+ "Princeton Nutrients"
 ];
