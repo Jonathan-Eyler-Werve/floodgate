@@ -141,5 +141,6 @@ window.mute.triggerWords = [
  "fuckface",
  "#gamergate",
  "Princeton Nutrients",
- "the "
+ "the ",
+ "what"
 ];

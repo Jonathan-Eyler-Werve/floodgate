@@ -10,27 +10,35 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
   var tweets = $(".tweet, .stream-item-content, .QuoteTweet");
 
   tweets.each( function(index, tweet){
+    if ( tweet.scanned !== true ) {
+      // resets current Tweet for this tweet-loop
+      window.mute.currentTweet = {}
+      // stashes the currently reviewed tweet so we can find it in DOM
+      window.mute.currentTweet.html = tweet
 
-    // stashes the currently reviewed tweet so we can add to it
-    window.mute.currentTweet = tweet
+      var tweetContent = $(tweet).find(".tweet-text").text().toLowerCase();
 
-    var tweetContent = $(tweet).find(".tweet-text").text().toLowerCase();
+      $.each(triggerWords, function(index, word){
 
-    $.each(triggerWords, function(index, word){
-      var regex = new RegExp(word.toLowerCase());
-      var match = regex.test(tweetContent);
+        var regex = new RegExp(word.toLowerCase());
+        var match = regex.test(tweetContent);
 
-      if (match) {
+        if (match) {
 
-        // word
-        $(tweet).find(".tweet-text").text('Muted by Filter Scout because tweet includes: "' + word +'"')
+          $(tweet).find("filterScout reason-for-mute")
+          appendText = '<div class="filterScout reason-for-mute">Muted by Filter Scout because it includes: "' + word +'"</p>'
 
-        console.log("Matched on the word:", word);
+          $(tweet).append('<div>Muted by Filter Scout because tweet includes: "' + word +'"</p>')
 
-        window.mute.tweetTriggerTextFilter.muteStuff(tweet, tweetContent)
-        window.mute.tweetTriggerTextFilter.matchFound = true
-        }
-    });
+          console.log("Matched on the word:", word);
+
+          window.mute.tweetTriggerTextFilter.muteStuff(tweet, tweetContent)
+          window.mute.tweetTriggerTextFilter.matchFound = true
+          }
+      });
+    };
+
+    tweet.scanned = true
   });
 
   if (window.mute.tweetTriggerTextFilter.matchFound === true)
