@@ -11,6 +11,9 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
   tweets.each( function(index, tweet){
 
+    // stashes the currently reviewed tweet so we can add to it
+    window.mute.currentTweet = tweet
+
     var tweetContent = $(tweet).find(".tweet-text").text().toLowerCase();
 
     $.each(triggerWords, function(index, word){
@@ -18,7 +21,13 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
       var match = regex.test(tweetContent);
 
       if (match) {
-        window.mute.tweetTriggerTextFilter.hideStuff(tweet, tweetContent)
+
+        // word
+        $(tweet).find(".tweet-text").text('Muted by Filter Scout because tweet includes: "' + word +'"')
+
+        console.log("Matched on the word:", word);
+
+        window.mute.tweetTriggerTextFilter.muteStuff(tweet, tweetContent)
         window.mute.tweetTriggerTextFilter.matchFound = true
         }
     });
@@ -29,7 +38,7 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 };
 
 
-window.mute.tweetTriggerTextFilter.hideStuff = function (tweet, tweetContent) {
+window.mute.tweetTriggerTextFilter.muteStuff = function (tweet, tweetContent) {
   $(tweet).css("background-color", "#E6F8E0");
   $(tweet).css("border-color", "#CFE9C7");
   $(tweet).css("color", "#B8CDB9");
