@@ -114,6 +114,7 @@ window.mute.triggerWords = [
  "fat face",
  "bitch",
  "KiA",
+ "fuck you",
  "baby like you",
  "you special snowflake",
  "are you triggered",
@@ -139,5 +140,6 @@ window.mute.triggerWords = [
  "matriarchy",
  "fuckface",
  "#gamergate",
- "Princeton Nutrients"
+ "Princeton Nutrients",
+ "the "
 ];
