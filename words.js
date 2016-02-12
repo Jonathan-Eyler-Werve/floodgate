@@ -10,7 +10,6 @@ window.mute.racialSlurs = [
   "abid",
   "Annamite",
   "Arabush",
-  "Armo",
   "Aunt Jemima",
   "Beaney",
   "Beaner",
@@ -42,6 +41,7 @@ window.mute.racialSlurs = [
   "Curry muncher",
   "Dal Khor",
   "dindu",
+  "dingoes",
   "Dothead",
   "dune coon",
   "Eskimo",
@@ -93,6 +93,8 @@ window.mute.racialSlurs = [
   "sandnigger",
   "Schvartse",
   "Seppo",
+  "Shoah'ed",
+  "Shoahed",
   "Sheep shagger",
   "slopehead",
   "Spearchucker",
@@ -100,6 +102,7 @@ window.mute.racialSlurs = [
   "Tacohead",
   "Tar-Baby",
   "TarBaby",
+  "thug",
   "Timber nigger",
   "Towel head",
   "Towelhead",
@@ -110,7 +113,9 @@ window.mute.racialSlurs = [
   "whigger",
   "wigga",
   "white trash",
-  "Zipperhead"
+  "Zipperhead",
+  "卐",
+  "not racist but"
   ]
 
 window.mute.triggerWords = [
@@ -151,5 +156,6 @@ window.mute.triggerWords = [
  "matriarchy",
  "fuckface",
  "#gamergate",
- "Princeton Nutrients"
+ "Princeton Nutrients",
+ "you asshole"
 ];
