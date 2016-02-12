@@ -4,10 +4,18 @@ if (window.mute === undefined) { window.mute = {} };
 
 $(function() {
 
-  // window.mute.tweetTriggerTextFilter(window.mute.triggerWords);
-  window.mute.filterIntervalID = window.setInterval(window.mute.tweetTriggerTextFilter, 1000, window.mute.triggerWords);
+  window.mute.addStylesheet("stylesheets/filterScout.css");
+  window.mute.filterIntervalID = window.setInterval(window.mute.allFilters, 1000);
 
 });
+
+
+window.mute.allFilters = function () {
+  // Sets the number of passes each tweet should recieve before tweetTriggerTextFilter skips that tweet
+  window.mute.numberOfFilters = 2
+  window.mute.tweetTriggerTextFilter(window.mute.racialSlurs);
+  window.mute.tweetTriggerTextFilter(window.mute.triggerWords);
+};
 
 
 chrome.runtime.onMessage.addListener(

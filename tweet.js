@@ -11,17 +11,38 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
   tweets.each( function(index, tweet){
 
-    var tweetContent = $(tweet).find(".tweet-text").text().toLowerCase();
+    // initialize tweet
+    if ( tweet.reasons === undefined ) { tweet.reasons = [] };
+    if ( tweet.timesScanned === undefined ) { tweet.timesScanned = 0 }
 
-    $.each(triggerWords, function(index, word){
-      var regex = new RegExp(word.toLowerCase());
-      var match = regex.test(tweetContent);
 
-      if (match) {
-        window.mute.tweetTriggerTextFilter.hideStuff(tweet, tweetContent)
-        window.mute.tweetTriggerTextFilter.matchFound = true
+    if ( tweet.timesScanned < window.mute.numberOfFilters ) {
+
+      var tweetContent = $(tweet).find(".tweet-text").text().toLowerCase();
+      var tweetName = $(tweet).find(".fullname").text().toLowerCase();
+      var tweetRetweeterName = $(tweet).find(".js-user-profile-link").text().toLowerCase();
+
+      $.each(triggerWords, function(index, word){
+
+        var regex = new RegExp(word.toLowerCase());
+        var match = regex.test(tweetContent + " " + tweetName + " " + tweetRetweeterName);
+
+        if (match) {
+          tweet.reasons.push(word)
+          tweet.filterAction = "muted"
+          window.mute.tweetTriggerTextFilter.muteStuff(tweet, tweetContent)
+          window.mute.tweetTriggerTextFilter.matchFound = true
         }
-    });
+
+      });
+
+      tweet.timesScanned += 1;
+
+      // append justification to muted tweet, but only on last pass of filter
+      appendText = '<div class="filterScout reason-for-mute">Muted by Filter Scout because it includes: "' + tweet.reasons.join('", "')  +'"</p>';
+      if ( tweet.filterAction && ( tweet.timesScanned === window.mute.numberOfFilters )) { $(tweet).append(appendText) };
+
+    };
   });
 
   if (window.mute.tweetTriggerTextFilter.matchFound === true)
@@ -29,7 +50,7 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 };
 
 
-window.mute.tweetTriggerTextFilter.hideStuff = function (tweet, tweetContent) {
+window.mute.tweetTriggerTextFilter.muteStuff = function (tweet, tweetContent) {
   $(tweet).css("background-color", "#E6F8E0");
   $(tweet).css("border-color", "#CFE9C7");
   $(tweet).css("color", "#B8CDB9");
