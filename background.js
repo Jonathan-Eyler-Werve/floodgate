@@ -11,8 +11,21 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    if( request.status === "page_modified" ) {
-      console.log("we got a page_modified message")
+    console.log(request);
+
+    if ( request.filterEvent === "matchFound" ) {
+      console.log("Message: ", request.filterEvent );
+
+      // sets icon to Active state
+      chrome.browserAction.setIcon({
+        path : "images/icon-active.png",
+        tabId: sender.tab.id
+      });
     }
-  }
-);
+
+  });
+
+console.log("background script runs")
+
+
+

@@ -1,21 +1,27 @@
 {
   "manifest_version": 2,
-  "name": "My Cool Extension",
+  "name": "Filter Scout",
   "version": "0.1",
+  "description": "FilterScout hides unwanted content on the Web.",
+  "icons": {
+    "19": "images/icon-default-19.png",
+    "38": "images/icon-default.png"},
 
   "browser_action": {
-    "default_icon": "icon.png"
+    "default_icon": {
+            "19": "images/icon-default-19.png",
+            "38": "images/icon-default.png"
+          }
   },
 
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
+      "matches": ["*://*.twitter.com/*"],
       "js": [
         "jquery-2.2.0.min.js",
         "content.js",
         "imageHide.js",
+        "tests.js",
         "tweet.js",
         "words.js"
       ]
