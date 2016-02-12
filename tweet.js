@@ -10,6 +10,10 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
   var tweets = $(".tweet, .stream-item-content, .QuoteTweet");
 
   tweets.each( function(index, tweet){
+
+    // initialize tweet.reasons which holds reasons that filter rules were applied
+    if ( tweet.reasons === undefined ) { tweet.reasons = [] };
+
     if ( tweet.scanned !== true ) {
       // resets current Tweet for this tweet-loop
       window.mute.currentTweet = {}
@@ -24,21 +28,19 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
         var match = regex.test(tweetContent);
 
         if (match) {
-
-          $(tweet).find("filterScout reason-for-mute")
-          appendText = '<div class="filterScout reason-for-mute">Muted by Filter Scout because it includes: "' + word +'"</p>'
-
-          $(tweet).append('<div>Muted by Filter Scout because tweet includes: "' + word +'"</p>')
-
-          console.log("Matched on the word:", word);
-
+          tweet.reasons.push(word)
+          tweet.filterAction = "muted"
           window.mute.tweetTriggerTextFilter.muteStuff(tweet, tweetContent)
           window.mute.tweetTriggerTextFilter.matchFound = true
           }
       });
-    };
 
-    tweet.scanned = true
+      appendText = '<div class="filterScout reason-for-mute">Muted by Filter Scout because it includes: "' + tweet.reasons.join('", "')  +'"</p>';
+
+      if ( tweet.filterAction ) { $(tweet).append(appendText) };
+
+      tweet.scanned = true;
+    };
   });
 
   if (window.mute.tweetTriggerTextFilter.matchFound === true)

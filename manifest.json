@@ -20,6 +20,7 @@
       "js": [
         "jquery-2.2.0.min.js",
         "content.js",
+        "cssLink.js",
         "imageHide.js",
         "tests.js",
         "tweet.js",
@@ -30,5 +31,8 @@
 
   "background": {
     "scripts": ["background.js"]
-  }
+  },
+
+  "web_accessible_resources": ["stylesheets/filterScout.css"]
+
 }
