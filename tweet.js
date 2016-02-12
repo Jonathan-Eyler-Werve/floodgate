@@ -11,10 +11,12 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
   tweets.each( function(index, tweet){
 
-    // initialize tweet.reasons which holds reasons that filter rules were applied
+    // initialize tweet
     if ( tweet.reasons === undefined ) { tweet.reasons = [] };
+    if ( tweet.timesScanned === undefined ) { tweet.timesScanned = 0 }
 
-    if ( tweet.scanned !== true ) {
+
+    if ( tweet.timesScanned < window.mute.numberOfFilters ) {
       // resets current Tweet for this tweet-loop
       window.mute.currentTweet = {}
       // stashes the currently reviewed tweet so we can find it in DOM
@@ -35,11 +37,12 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
           }
       });
 
+      tweet.timesScanned += 1;
+
+      // append justification to muted tweet, but only on last pass of filter
       appendText = '<div class="filterScout reason-for-mute">Muted by Filter Scout because it includes: "' + tweet.reasons.join('", "')  +'"</p>';
+      if ( tweet.filterAction && ( tweet.timesScanned === window.mute.numberOfFilters )) { $(tweet).append(appendText) };
 
-      if ( tweet.filterAction ) { $(tweet).append(appendText) };
-
-      tweet.scanned = true;
     };
   });
 
