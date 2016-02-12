@@ -17,24 +17,23 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
 
     if ( tweet.timesScanned < window.mute.numberOfFilters ) {
-      // resets current Tweet for this tweet-loop
-      window.mute.currentTweet = {}
-      // stashes the currently reviewed tweet so we can find it in DOM
-      window.mute.currentTweet.html = tweet
 
       var tweetContent = $(tweet).find(".tweet-text").text().toLowerCase();
+      var tweetName = $(tweet).find(".fullname").text().toLowerCase();
+      var tweetRetweeterName = $(tweet).find(".js-user-profile-link").text().toLowerCase();
 
       $.each(triggerWords, function(index, word){
 
         var regex = new RegExp(word.toLowerCase());
-        var match = regex.test(tweetContent);
+        var match = regex.test(tweetContent + " " + tweetName + " " + tweetRetweeterName);
 
         if (match) {
           tweet.reasons.push(word)
           tweet.filterAction = "muted"
           window.mute.tweetTriggerTextFilter.muteStuff(tweet, tweetContent)
           window.mute.tweetTriggerTextFilter.matchFound = true
-          }
+        }
+
       });
 
       tweet.timesScanned += 1;
