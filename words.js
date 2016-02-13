@@ -3,6 +3,7 @@
 if (window.mute === undefined) { window.mute = {} };
 
 window.mute.racialSlurs = [
+  "Aryan",
   "Alligator bait",
   "gator bait",
   "ali baba",
@@ -63,6 +64,7 @@ window.mute.racialSlurs = [
   "jijjiboo",
   "zigabo",
   "Jungle bunny",
+  "jew brainwashing",
   "Khokhol",
   "Kike",
   "Klansman",
@@ -70,6 +72,7 @@ window.mute.racialSlurs = [
   "Moon Cricket",
   "Mooncricket",
   "muddaland",
+  "Muslim Invasion",
   "Mulignan",
   "Mulignon",
   "nazi",
@@ -120,6 +123,8 @@ window.mute.racialSlurs = [
   "wigga",
   "white trash",
   "whitegenocide",
+  "white power",
+  "whitegirlsaremagic",
   "Zipperhead",
   "卐",
   "not racist but"
