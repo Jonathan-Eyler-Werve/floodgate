@@ -1,3 +1,26 @@
-.reason-for-mute {
+ /* Explain why content was muted */
+
+.filterScout.reason-for-mute {
   margin: 10px 0 0 60px;
+  color: #94A394;
   }
+
+.stream-item-content .filterScout.reason-for-mute {
+  margin: -10px 0 5px 70px;
+}
+
+.QuoteTweet .filterScout.reason-for-mute {
+  margin: -10px 0 10px 10px;
+}
+
+/* Mute tweet text */
+
+.mute-this {
+  visibility: hidden;
+}
+
+li:hover .mute-this {
+  visibility: visible !important;
+}
+
+

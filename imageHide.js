@@ -22,6 +22,7 @@ window.mute.imageHide = function (target) {
       $(image).css("background-color", "#D8F6CE");
       $(image).attr("src", "");
       $(image).attr("srcset", "");
+      $(image).addClass("mute-this");
       // console.log("hiding this image:", image);
     }
   });
