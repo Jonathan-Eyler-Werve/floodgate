@@ -12,9 +12,11 @@ $(function() {
 
 window.mute.allFilters = function () {
   // Sets the number of passes each tweet should recieve before tweetTriggerTextFilter skips that tweet
-  window.mute.numberOfFilters = 2
+  window.mute.numberOfFilters = 3
   window.mute.tweetTriggerTextFilter(window.mute.racialSlurs);
+  window.mute.tweetTriggerTextFilter(window.mute.queerSlurs);
   window.mute.tweetTriggerTextFilter(window.mute.triggerWords);
+
 };
 
 

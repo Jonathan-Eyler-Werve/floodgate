@@ -10,6 +10,7 @@ console.log(true);
 console.log(window.mute.tweetTriggerTextFilter !== undefined);
 console.log(window.mute.imageHide !== undefined);
 console.log(window.mute.triggerWords !== undefined);
+console.log(window.mute.addStylesheet !== undefined);
 
 console.log("--- imageHide.js ---");
 var stub = $("body");

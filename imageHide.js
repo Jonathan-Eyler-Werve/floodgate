@@ -5,7 +5,7 @@
 if (window.mute === undefined) { window.mute = {} };
 
 window.mute.imageHide = function (target) {
-  // console.log("mute.imageHide runs");
+
   target = $(target)
 
   var elements, images, minSize;
@@ -16,12 +16,13 @@ window.mute.imageHide = function (target) {
 
   $.each(images, function(index, image){
 
-    if ( (image !== undefined) && ($(image).width() > minSize) ) {
+    if (image !== undefined) {
       $(image).attr("width", $(image).width());
       $(image).attr("height", window.mute.imageHide.getHeight(image));
       $(image).css("background-color", "#D8F6CE");
       $(image).attr("src", "");
       $(image).attr("srcset", "");
+      $(image).addClass("mute-this");
       // console.log("hiding this image:", image);
     }
   });
