@@ -3,7 +3,7 @@
 if (window.mute === undefined) { window.mute = {} };
 
 window.mute.racialSlurs = [
-  "Aryan ",
+  " Aryan ",
   "Alligator bait",
   "gator bait",
   "ali baba",
@@ -131,6 +131,7 @@ window.mute.racialSlurs = [
 
 window.mute.queerSlurs = [
   "faggot",
+  " fag ",
   "arse bandit",
   "Back door bandit",
   "batty boy",
