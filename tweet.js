@@ -37,12 +37,8 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
           tweet.reasons.push(word)
           tweet.filterAction = "muted"
 
-          $(tweet).find(".tweet-text").addClass("mute-this");
-          $(tweet).find(".stream-item-footer").addClass("mute-this");
-          $(tweet).find(".stream-item-header").addClass("mute-this");
-          $(tweet).find(".tweet-context").addClass("mute-this");
-          $(tweet).find(".tweet-content").addClass("mute-this");
-          $(tweet).find("iframe").addClass("mute-this");
+          $(tweet).find(".AdaptiveMedia, iframe, .stream-item-footer, .stream-item-header, .tweet-content, .tweet-context, .tweet-text").addClass("mute-this");
+
           window.mute.tweetTriggerTextFilter.muteStuff(tweet, tweetContent);
           window.mute.tweetTriggerTextFilter.matchFound = true;
         }

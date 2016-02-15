@@ -20,7 +20,10 @@
 }
 
 li:hover .mute-this {
-  visibility: visible !important;
+  visibility: visible;
 }
 
+.mute-this.AdaptiveMedia {
+  display: none !important;
+}
 
