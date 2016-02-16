@@ -11,6 +11,8 @@ console.log(window.mute.tweetTriggerTextFilter !== undefined);
 console.log(window.mute.imageHide !== undefined);
 console.log(window.mute.triggerWords !== undefined);
 console.log(window.mute.addStylesheet !== undefined);
+console.log(window.mute.getUserID !== undefined);
+console.log(window.mute.getRandomToken !== undefined);
 
 console.log("--- imageHide.js ---");
 var stub = $("body");
@@ -23,7 +25,14 @@ console.log( window.mute.imageHide.getElements(stub).length > 0 ); // page depen
 console.log(".getHeight()");
 console.log( typeof window.mute.imageHide.getHeight($("img")[0]) === "number");
 
-console.log(".imageHide()");
+// console.log(".imageHide()");
 // window.mute.imageHide($(".tweet, .stream-item-content"));
+
+console.log(".getUserID()");
+console.log("current userID is", window.mute.getUserID())
+console.log(typeof window.mute.getUserID() === "string")
+console.log(typeof window.mute.getRandomToken() === "string")
+console.log(window.mute.getRandomToken() !== window.mute.getRandomToken())
+console.log(window.mute.getUserID() === window.mute.getUserID())
 
 });

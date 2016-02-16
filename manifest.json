@@ -21,6 +21,7 @@
         "jquery-2.2.0.min.js",
         "content.js",
         "cssLink.js",
+        "getUserID.js",
         "imageHide.js",
         "tests.js",
         "tweet.js",
@@ -32,6 +33,8 @@
   "background": {
     "scripts": ["background.js"]
   },
+
+  "permissions": ["storage"],
 
   "web_accessible_resources": ["stylesheets/filterScout.css"]
 

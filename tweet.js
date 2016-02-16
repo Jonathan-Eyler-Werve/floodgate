@@ -26,8 +26,6 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
       var tweetName = $(tweet).find(".fullname").text().toLowerCase();
       var tweetRetweeterName = $(tweet).find(".js-user-profile-link").text().toLowerCase();
 
-      console.log(tweetContent);
-
       $.each(triggerWords, function(index, word){
 
         var regex = new RegExp(word.toLowerCase());
