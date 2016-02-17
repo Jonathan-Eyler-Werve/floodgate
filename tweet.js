@@ -35,7 +35,7 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
           tweet.reasons.push(word)
           tweet.filterAction = "muted"
 
-          $(tweet).find(".AdaptiveMedia, iframe, .stream-item-footer, .stream-item-header, .tweet-content, .tweet-context, .tweet-text").addClass("mute-this");
+          $(tweet).find(".AdaptiveMedia, button, iframe, .stream-item-footer, .stream-item-header, .tweet-content, .tweet-context, .tweet-text").addClass("mute-this");
 
           window.mute.tweetTriggerTextFilter.muteStuff(tweet, tweetContent);
           window.mute.tweetTriggerTextFilter.matchFound = true;
