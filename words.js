@@ -33,7 +33,7 @@ window.mute.racialSlurs = [
   "Chink",
   "Christ killer",
   "Chonky",
-  "chimp",
+  " chimp ",
   "Chunky",
   "Chunger",
   "Coolie",
