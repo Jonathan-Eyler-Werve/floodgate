@@ -10,7 +10,6 @@ window.mute.getUserID = function (target) {
     // talks to chome.storage to retrieve or set userID
     chrome.storage.sync.get('userID', function(items) {
       var userID = items.userID;
-
       if (userID) {
         window.mute.userID = userID;
       } else {

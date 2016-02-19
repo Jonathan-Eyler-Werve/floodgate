@@ -23,6 +23,7 @@
         "cssLink.js",
         "getUserID.js",
         "imageHide.js",
+        "settingsPage.js",
         "tests.js",
         "tweet.js",
         "words.js"
