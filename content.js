@@ -18,14 +18,32 @@ $(function() {
   // window.mute.buildActiveWordLists();
 
   // start a loop that rechecks for unfiltered tweets on interval
-  window.mute.filterIntervalID = window.setInterval(window.mute.allFilters, 1000);
+  window.mute.filterIntervalID = window.setInterval(window.mute.runFilters, 500);
 
 });
 
 
-window.mute.allFilters = function () {
+window.mute.runFilters = function () {
 
-  // iterate over an array of mutelists
+    // synced settings object has {key: boolean}, the local object has {key: array}
+    // keys are the same
+
+    var activeFilters = window.mute.settings.activeFilters
+
+    // reset the active filter count
+    window.mute.numberOfFilters = 0
+
+    Object.keys(activeFilters).forEach(function (key) {
+      if (activeFilters[key]) {
+        window.mute.tweetTriggerTextFilter(window.mute.allFilters[key]);
+        window.mute.numberOfFilters += 1;
+      }
+    });
+
+
+
+
+
 
 
   // Sets the number of passes each tweet should recieve before tweetTriggerTextFilter skips that tweet

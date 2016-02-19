@@ -23,8 +23,8 @@ $(function() {
   console.log(window.mute.getRandomToken !== undefined);
 
   console.log("--- words.js ---");
-  console.log(typeof window.mute.wordLists === "object");
-  console.log(window.mute.wordLists.racialSlurs[0] === "test-stub-sibmeivmsobmsovnwodskfwdkvob");
+  console.log(typeof window.mute.allFilters === "object");
+  console.log(window.mute.allFilters.racialSlurs[0] === "test-stub-sibmeivmsobmsovnwodskfwdkvob");
 
   console.log("--- imageHide.js ---");
   var stub = $("body");

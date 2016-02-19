@@ -2,77 +2,8 @@
 
 if (window.mute === undefined) { window.mute = {} };
 
-window.mute.buildActiveWordLists = function () {
 
-  // WORK IN PROGRESS
-
-  // window.mute.activeWordLists = []
-
-  //   var obj = window.mute.settings.activeFilters
-
-  //   Object.keys(obj).forEach(function (key) {
-  //     if (obj[key]) {
-  //       window.mute.activeWordLists.push(window.mute.wordLists[key]);
-  //     }
-  //   });
-
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-window.mute.wordLists = {
+window.mute.allFilters = {
 
   racialSlurs: [
     "test-stub-sibmeivmsobmsovnwodskfwdkvob",
@@ -271,12 +202,14 @@ window.mute.wordLists = {
     "TW/ rape",
     "TW/rape",
     "rape//",
+    "^rape",
     " rape ",
     "'rape ",
     '"rape ',
     "'rape'",
     '"rape"',
     " rape,",
+    " rape\.",
     "/rape/",
     "/rape ",
     "rape me",
@@ -344,6 +277,7 @@ window.mute.wordLists = {
   ],
 
   aggressionWords: [
+    "cunt",
     "die bitch",
     "dumb bitch",
     "fat bitch",
@@ -374,7 +308,6 @@ window.mute.wordLists = {
 
   triggerWarning: [
     " TW ",
-    "TW-",
     "TW/",
     "TW: ",
     "TW:/",
