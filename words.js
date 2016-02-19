@@ -24,7 +24,6 @@ window.mute.racialSlurs = [
   "Boonga", "boonga", "bunga", "boonie",
   "Bootlip",
   "Buddhahead",
-  "Bule",
   "Burrhead",
   "Camel Jockey",
   "Chee-chee",
