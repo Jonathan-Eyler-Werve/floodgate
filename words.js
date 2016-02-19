@@ -289,7 +289,7 @@ window.mute.triggerWarning = [
   "TW/",
   "TW: ",
   "TW:/",
-  "TW!",
+  " TW!",
 
   "trigger warning"
 ]

@@ -38,7 +38,7 @@ $(function() {
 
   // console.log(".imageHide()");
   // window.mute.imageHide($(".tweet, .stream-item-content"));
-
+  console.log("--- getUserID.js ---");
   window.setTimeout(window.mute.testDelay, 2000);
 
 });
