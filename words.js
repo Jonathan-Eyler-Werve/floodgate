@@ -191,6 +191,110 @@ window.mute.queerSlurs = [
   "smear the queer"
   ]
 
+window.mute.sexCrimeWords = [
+  "TW rape",
+  "TW-rape",
+  "TW/ rape",
+  "TW/rape",
+  "rape//",
+  " rape ",
+  "'rape ",
+  '"rape ',
+  "'rape'",
+  '"rape"',
+  " rape,",
+  "/rape/",
+  "/rape ",
+  "rape me",
+  "rape you",
+  "rape u ",
+  "Rape of Europe",
+  "dry rape",
+  "rape train",
+  "rape threat",
+  " raped",
+  "rape her",
+  "rape him",
+  "rape them",
+  "rape culture",
+  "get raped",
+  "be raped",
+  "raping",
+  "rapist",
+  "statuatory rape",
+  "legitmate rape",
+  "stranger rape",
+  "sexual assault",
+  "assault allegation",
+  "without my consent",
+  "without consent",
+  "stalking",
+  "stalker",
+  "genital mutilation",
+  "sex attack",
+  "rough sex",
+  "forced sex",
+  "gangbang",
+  "sexual humiliation",
+  "sex crime",
+  "gang-rape",
+  "gage rape",
+  "frat rape",
+
+
+  "cock in your",
+  "dick in your",
+  "should fuck you",
+
+  // hooboy
+  "incest",
+  "Pseudo-incest",
+  "pedophile",
+  "molester",
+  "molested",
+  "sexual abuse",
+  "statuatory rape",
+  "nonconsent",
+  "age of consent",
+  "bestiality",
+  "daddy porn",
+  "mommy porn",
+  "child abuse",
+
+  // drugs associated with rape
+  "Roofies",
+  "Ruffies",
+  "Forget-Pill",
+  "Rohypnol",
+  "Clonazepam",
+  "Klonopin"
+]
+
+window.mute.aggressionWords = [
+  "die bitch",
+  "dumb bitch",
+  "fat bitch",
+  "fat cunt",
+  "should fuck you",
+  "pig fucker",
+  "dumb fascist",
+  "retard ",
+
+  "die bitch"
+]
+
+window.mute.triggerWarning = [
+  " TW ",
+  "TW-",
+  "TW/",
+  "TW: ",
+  "TW:/",
+  "TW!",
+
+  "trigger warning"
+]
+
+
 window.mute.triggerWords = [
  "sjw",
  "faggot",
@@ -229,6 +333,5 @@ window.mute.triggerWords = [
  "matriarchy",
  "fuckface",
  "#gamergate",
- "Princeton Nutrients",
  "you asshole"
 ];
