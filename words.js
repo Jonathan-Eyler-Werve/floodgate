@@ -69,6 +69,7 @@ window.mute.allFilters = {
     "Khokhol",
     "Kike",
     "Klansman",
+    "KKK",
     "Macaca",
     "Moon Cricket",
     "Mooncricket",
@@ -209,7 +210,6 @@ window.mute.allFilters = {
     "'rape'",
     '"rape"',
     " rape,",
-    " rape\.",
     "/rape/",
     "/rape ",
     "rape me",
@@ -291,7 +291,7 @@ window.mute.allFilters = {
     "kill your",
     "fuck you",
     "hang yourself",
-    "fuck u",
+    "fuck u ",
     "baby like you",
     "you special snowflake",
     "are you triggered",
@@ -301,8 +301,6 @@ window.mute.allFilters = {
     "antiGG",
     "she's a fat",
     "she's fat",
-
-
     "die bitch"
   ],
 

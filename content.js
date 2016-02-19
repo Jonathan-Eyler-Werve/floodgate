@@ -25,36 +25,25 @@ $(function() {
 
 window.mute.runFilters = function () {
 
-    // synced settings object has {key: boolean}, the local object has {key: array}
-    // keys are the same
+  // synced settings object has {key: boolean}, the local object has {key: array}
+  // keys are the same
 
-    var activeFilters = window.mute.settings.activeFilters
+  var activeFilters = window.mute.settings.activeFilters
 
-    // reset the active filter count
-    window.mute.numberOfFilters = 0
+  // set number of filters
+  window.mute.numberOfFilters = 0
+  Object.keys(activeFilters).forEach(function (key) {
+    if (activeFilters[key]) {
+      window.mute.numberOfFilters += 1;
+    }
+  });
 
-    Object.keys(activeFilters).forEach(function (key) {
-      if (activeFilters[key]) {
-        window.mute.tweetTriggerTextFilter(window.mute.allFilters[key]);
-        window.mute.numberOfFilters += 1;
-      }
-    });
+  Object.keys(activeFilters).forEach(function (key) {
+    if (activeFilters[key]) {
+      window.mute.tweetTriggerTextFilter(window.mute.allFilters[key]);
+    }
+  });
 
-
-
-
-
-
-
-  // Sets the number of passes each tweet should recieve before tweetTriggerTextFilter skips that tweet
-  window.mute.numberOfFilters = 6; // this is length of muteList array
-
-  // window.mute.tweetTriggerTextFilter(window.mute.racialSlurs);
-  // window.mute.tweetTriggerTextFilter(window.mute.queerSlurs);
-  // window.mute.tweetTriggerTextFilter(window.mute.triggerWords);
-  // window.mute.tweetTriggerTextFilter(window.mute.triggerWarning);
-  // window.mute.tweetTriggerTextFilter(window.mute.agressionWords);
-  // window.mute.tweetTriggerTextFilter(window.mute.sexCrimeWords);
 };
 
 
