@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Filter Scout",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "FilterScout hides unwanted content on the Web.",
   "icons": {
     "19": "images/icon-default-19.png",

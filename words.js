@@ -58,7 +58,7 @@ window.mute.allFilters = {
     "half breed",
     "Hymie",
     "Ikey mo",
-    "Injun",
+    "Injun ",
     "Jigaboo",
     "jigarooni",
     "jiggabo",
