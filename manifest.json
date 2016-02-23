@@ -18,21 +18,21 @@
     {
       "matches": ["*://*.twitter.com/*"],
       "js": [
-        "jquery-2.2.0.min.js",
-        "content.js",
-        "cssLink.js",
-        "getUserID.js",
-        "imageHide.js",
-        "settingsPage.js",
-        "tests.js",
-        "tweet.js",
-        "words.js"
+        "/assets/vendor/jquery-2.2.0.min.js",
+        "/controllers/content.js",
+        "/models/cssLink.js",
+        "/models/getUserID.js",
+        "/models/imageHide.js",
+        "/models/settingsPage.js",
+        "/models/tests.js",
+        "/models/tweet.js",
+        "/models/words.js"
       ]
     }
   ],
 
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["/controllers/background.js"]
   },
 
   "permissions": ["storage"],
