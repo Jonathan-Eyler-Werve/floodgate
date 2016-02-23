@@ -251,6 +251,8 @@ window.mute.allFilters = {
     "cock in your",
     "dick in your",
     "should fuck you",
+    "paedophile",
+    "pedophile"
 
     // hooboy
     "incest",

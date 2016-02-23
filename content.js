@@ -8,7 +8,7 @@ if (window.mute === undefined) { window.mute = {} };
 $(function() {
 
   // initialize assets
-  window.mute.addStylesheet("stylesheets/filterScout.css");
+  window.mute.addStylesheet("/assets/stylesheets/filterScout.css");
   window.mute.getUserID();
 
   // request settings

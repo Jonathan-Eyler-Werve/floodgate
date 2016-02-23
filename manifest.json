@@ -4,13 +4,13 @@
   "version": "0.0.3",
   "description": "FilterScout hides unwanted content on the Web.",
   "icons": {
-    "19": "images/icon-default-19.png",
-    "38": "images/icon-default.png"},
+    "19": "/assets/images/icon-default-19.png",
+    "38": "/assets/images/icon-default.png"},
 
   "browser_action": {
     "default_icon": {
-            "19": "images/icon-default-19.png",
-            "38": "images/icon-default.png"
+            "19": "/assets/images/icon-default-19.png",
+            "38": "/assets/images/icon-default.png"
           }
   },
 
@@ -37,6 +37,6 @@
 
   "permissions": ["storage"],
 
-  "web_accessible_resources": ["stylesheets/filterScout.css"]
+  "web_accessible_resources": ["/assets/stylesheets/filterScout.css"]
 
 }
