@@ -13,7 +13,6 @@ window.mute.getSettings = function () {
     // if yes, set settings
     // if no, run splash page
 
-
   window.mute.settings.activeFilters = {
     racialSlurs: true,
     queerSlurs: true,

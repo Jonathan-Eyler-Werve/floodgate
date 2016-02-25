@@ -14,17 +14,12 @@ $(function() {
   // request settings
   window.mute.getSettings(); // stubbed for now
 
-  // add active filter wordlists to mutelist array
-  // window.mute.buildActiveWordLists();
-
   // start a loop that rechecks for unfiltered tweets on interval
   window.mute.filterIntervalID = window.setInterval(window.mute.runFilters, 500);
 
 });
 
-
 window.mute.runFilters = function () {
-
   // synced settings object has {key: boolean}, the local object has {key: array}
   // keys are the same
 
