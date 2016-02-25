@@ -2,12 +2,11 @@
 
 if (window.mute === undefined) { window.mute = {} };
 
-window.mute.tweetTriggerTextFilter = function (triggerWords) {
-  // console.log("tweetTriggerTextFilter runs")
+window.mute.filterTweets = function (triggerWords) {
 
-  window.mute.tweetTriggerTextFilter.matchFound = false
+  window.mute.filterTweets.matchFound = false
 
-  var tweets = $(".tweet, .stream-item-content, .QuoteTweet");
+  var tweets = window.mute.filterTweets.getTweets();
 
   tweets.each( function(index, tweet){
 
@@ -37,14 +36,13 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
 
           $(tweet).find(".AdaptiveMedia, button, iframe, .stream-item-footer, .stream-item-header, .tweet-content, .tweet-context, .tweet-text").addClass("mute-this");
 
-          window.mute.tweetTriggerTextFilter.muteStuff(tweet, tweetContent);
-          window.mute.tweetTriggerTextFilter.matchFound = true;
+          window.mute.filterTweets.muteStuff(tweet, tweetContent);
+          window.mute.filterTweets.matchFound = true;
         }
 
       });
 
       tweet.timesScanned += 1;
-
 
       // append justification to muted tweet, but only on last pass of filter
       appendText = '<div class="filterScout reason-for-mute">Muted by Filter Scout because it includes: "' + tweet.reasons.join('", "') + '"</p>';
@@ -58,12 +56,15 @@ window.mute.tweetTriggerTextFilter = function (triggerWords) {
     };
   });
 
-  if (window.mute.tweetTriggerTextFilter.matchFound === true)
+  if (window.mute.filterTweets.matchFound === true)
     chrome.runtime.sendMessage({filterEvent: "matchFound"});
 };
 
+window.mute.filterTweets.getTweets = function () {
+  return $(".tweet, .stream-item-content, .QuoteTweet");
+};
 
-window.mute.tweetTriggerTextFilter.muteStuff = function (tweet, tweetContent) {
+window.mute.filterTweets.muteStuff = function (tweet, tweetContent) {
   $(tweet).css("background-color", "#E6F8E0");
   $(tweet).css("border-color", "#CFE9C7");
   $(tweet).css("color", "#B8CDB9");

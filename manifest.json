@@ -19,7 +19,9 @@
       "matches": ["*://*.twitter.com/*"],
       "js": [
         "/assets/vendor/jquery-2.2.0.min.js",
+
         "/controllers/content.js",
+
         "/models/cssLink.js",
         "/models/getUserID.js",
         "/models/imageHide.js",

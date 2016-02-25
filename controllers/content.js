@@ -30,7 +30,7 @@ window.mute.runFilters = function () {
 
   var activeFilters = window.mute.settings.activeFilters
 
-  // set number of filters
+  // set number of filters so we know which filter is running last
   window.mute.numberOfFilters = 0
   Object.keys(activeFilters).forEach(function (key) {
     if (activeFilters[key]) {
@@ -38,9 +38,10 @@ window.mute.runFilters = function () {
     }
   });
 
+  // run the filters
   Object.keys(activeFilters).forEach(function (key) {
     if (activeFilters[key]) {
-      window.mute.tweetTriggerTextFilter(window.mute.allFilters[key]);
+      window.mute.filterTweets(window.mute.allFilters[key]);
     }
   });
 

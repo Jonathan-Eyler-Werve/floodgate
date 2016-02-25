@@ -251,13 +251,12 @@ window.mute.allFilters = {
     "cock in your",
     "dick in your",
     "should fuck you",
-    "paedophile",
-    "pedophile",
 
     // hooboy
     "incest",
     "Pseudo-incest",
     "pedophile",
+    "paedophile",
     "molester",
     "molested",
     "sexual abuse",
