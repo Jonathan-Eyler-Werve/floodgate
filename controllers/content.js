@@ -14,6 +14,7 @@ $(function() {
 
   // initialize other assets
   window.mute.addStylesheet("/assets/stylesheets/filterScout.css");
+  // window.mute.addStylesheet("/assets/vendor/foundation.min.css");
   window.mute.getUserID();
 
   // start a loop that rechecks for unfiltered tweets

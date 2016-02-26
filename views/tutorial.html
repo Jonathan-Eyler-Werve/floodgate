@@ -1,5 +1,54 @@
-<html>
-<body>
-  Heeeey.
-</body>
+<!DOCTYPE html>
+
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width"/>
+
+    <title>Filter Scout</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/assets/vendor/foundation.min.css">
+    <link rel="stylesheet" href="/assets/stylesheets/filterScout.css">
+
+    <!-- Font Files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- JS Files -->
+    <script src="/assets/vendor/jquery-2.2.0.min.js"></script>
+    <script src="/assets/vendor/handlebars-v4.0.5.js"></script>
+
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="small-12 columns centered">
+        <div class="main">
+
+          <div id="wrapper"><!-- Main page content -->
+
+            {{ content }}
+
+          </div><!-- /wrapper -->
+
+        </div><!-- /main -->
+      </div>
+    </div>
+
+  </body>
+
 </html>
+
+

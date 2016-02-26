@@ -36,7 +36,19 @@
 
   "background": {
     "scripts": [
-      "/controllers/background.js"
+      "/assets/vendor/jquery-2.2.0.min.js",
+
+      "/controllers/background.js",
+
+      "/models/cssLink.js",
+      "/models/filters.js",
+      "/models/imageHide.js",
+      "/models/settings.js",
+      "/models/tests.js",
+      "/models/tweet.js",
+      "/models/userID.js",
+      "/models/words.js"
+
       ]
   },
 
@@ -44,7 +56,9 @@
 
   "web_accessible_resources": [
     "/assets/stylesheets/filterScout.css",
-    "/assets/stylesheets/foundation.css",
+    "/assets/vendor/foundation.min.css",
+    "/assets/vendor/jquery-2.2.0.min.js",
+    "/assets/vendor/handlebars-v4.0.5.js",
     "/views/tutorial.html"
   ]
 
