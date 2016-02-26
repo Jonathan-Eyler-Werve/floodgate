@@ -82,6 +82,7 @@ window.mute.allFilters = {
     "natzi",
     "Niglet",
     "Nig nog",
+    "nigger",
     "niggur",
     "nigguh",
     "niggah",
@@ -303,7 +304,8 @@ window.mute.allFilters = {
     "she's a fat",
     "she's fat",
     "die bitch",
-    "You're part of the problem"
+    "You're part of the problem",
+    "dick in ya mouth"
   ],
 
   triggerWarning: [

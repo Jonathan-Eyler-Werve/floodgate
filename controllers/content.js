@@ -9,7 +9,9 @@ $(function() {
 
   // quick start
   window.mute.getSettings();
+
   window.mute.runFilters();
+
 
   // initialize other assets
   window.mute.addStylesheet("/assets/stylesheets/filterScout.css");

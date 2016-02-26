@@ -15,12 +15,12 @@ $(function() {
 
   console.log("=== Tests running ===");
 
-  console.log(true);
   console.log(window.mute.filterTweets !== undefined);
   console.log(window.mute.imageHide !== undefined);
   console.log(window.mute.addStylesheet !== undefined);
   console.log(window.mute.getUserID !== undefined);
   console.log(window.mute.getRandomToken !== undefined);
+  console.log(window.mute.setSettings !== undefined);
 
   console.log("--- words.js ---");
   console.log(typeof window.mute.allFilters === "object");
