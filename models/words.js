@@ -305,7 +305,8 @@ window.mute.allFilters = {
     "she's fat",
     "die bitch",
     "You're part of the problem",
-    "dick in ya mouth"
+    "dick in ya mouth",
+    "#gamergate"
   ],
 
   triggerWarning: [

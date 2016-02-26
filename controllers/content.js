@@ -2,8 +2,7 @@
 
 if (window.mute === undefined) { window.mute = {} };
 
-// EXAMPLE
-// chrome.runtime.sendMessage({"foo-message": "message contents"});
+chrome.runtime.sendMessage({"pageAction": "tutorial"});
 
 $(function() {
 

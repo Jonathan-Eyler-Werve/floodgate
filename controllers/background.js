@@ -11,17 +11,25 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log(request);
+    console.log("Message recieved:", request);
 
     if ( request.filterEvent === "matchFound" ) {
       console.log("Message: ", request.filterEvent );
-
       // sets icon to Active state
       chrome.browserAction.setIcon({
         path : "images/icon-active.png",
         tabId: sender.tab.id
       });
     }
+
+    if ( request.pageAction === "tutorial" ) {
+
+      chrome.tabs.create({'url': chrome.extension.getURL('views/tutorial.html')}, function(tab) {
+        console.log("I made a turorial page");
+      });
+
+    }
+
 
   });
 

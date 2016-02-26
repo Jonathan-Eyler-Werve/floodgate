@@ -35,11 +35,17 @@
   ],
 
   "background": {
-    "scripts": ["/controllers/background.js"]
+    "scripts": [
+      "/controllers/background.js"
+      ]
   },
 
   "permissions": ["storage"],
 
-  "web_accessible_resources": ["/assets/stylesheets/filterScout.css"]
+  "web_accessible_resources": [
+    "/assets/stylesheets/filterScout.css",
+    "/assets/stylesheets/foundation.css",
+    "/views/tutorial.html"
+  ]
 
 }
