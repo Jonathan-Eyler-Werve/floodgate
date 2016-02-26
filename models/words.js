@@ -302,7 +302,8 @@ window.mute.allFilters = {
     "antiGG",
     "she's a fat",
     "she's fat",
-    "die bitch"
+    "die bitch",
+    "You're part of the problem"
   ],
 
   triggerWarning: [

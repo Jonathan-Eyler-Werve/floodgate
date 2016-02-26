@@ -23,11 +23,12 @@
         "/controllers/content.js",
 
         "/models/cssLink.js",
-        "/models/getUserID.js",
+        "/models/filters.js",
         "/models/imageHide.js",
-        "/models/settingsPage.js",
+        "/models/settings.js",
         "/models/tests.js",
         "/models/tweet.js",
+        "/models/userID.js",
         "/models/words.js"
       ]
     }

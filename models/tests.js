@@ -16,7 +16,7 @@ $(function() {
   console.log("=== Tests running ===");
 
   console.log(true);
-  console.log(window.mute.tweetTriggerTextFilter !== undefined);
+  console.log(window.mute.filterTweets !== undefined);
   console.log(window.mute.imageHide !== undefined);
   console.log(window.mute.addStylesheet !== undefined);
   console.log(window.mute.getUserID !== undefined);
