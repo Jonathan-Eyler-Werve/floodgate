@@ -1,7 +1,6 @@
 // background.js
 
-if (window.mute === undefined) { window.mute = {} };
-if (window.mute.bg === undefined) { window.mute.bg = {} };
+if (window.bg === undefined) { window.bg = {} };
 
 $(function() {
 
@@ -30,12 +29,15 @@ $(function() {
 
       if ( request.settings ) {
         console.log("Settings recieved:", request.settings)
+        window.bg.settings = request.settings;
+        // used to check for "dirty" data state
+        window.bg.remoteSettings = request.settings;
       };
 
       if ( request.pageAction === "tutorial" ) {
         chrome.tabs.create({'url': chrome.extension.getURL('views/tutorial.html')}, function(tab) {
           console.log("I made a turorial page");
-          window.mute.bg.tutorial();
+          window.bg.tutorial();
         });
       }
 

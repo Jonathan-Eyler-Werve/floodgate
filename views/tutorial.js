@@ -1,8 +1,9 @@
 // tutorial.js
 
-if (window.mute === undefined) { window.mute = {} };
-if (window.mute.bg === undefined) { window.mute.bg = {} };
+if (window.bg === undefined) { window.bg = {} };
 
-window.mute.bg.tutorial = function () {
+window.bg.tutorial = function () {
   console.log("tutorial()")
+
+
 };

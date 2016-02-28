@@ -1,14 +1,12 @@
 //background-tests.js
 
-if (window.mute === undefined) { window.mute = {} };
-if (window.mute.bg === undefined) { window.mute.bg = {} };
-
-
+if (window.bg === undefined) { window.bg = {} };
 
 $(function() {
 
   console.log("=== Background Tests running ===");
-  console.log(Object.keys(window.mute.bg).length > 0);
-  console.log(window.mute.bg.tutorial !== undefined);
+  console.log(Object.keys(window.bg).length > 0);
+  console.log(window.bg.tutorial !== undefined);
+  console.log("");
 
 });
