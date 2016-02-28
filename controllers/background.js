@@ -35,7 +35,7 @@ $(function() {
       if ( request.pageAction === "tutorial" ) {
         chrome.tabs.create({'url': chrome.extension.getURL('views/tutorial.html')}, function(tab) {
           console.log("I made a turorial page");
-          BG.tutorial();
+
         });
       }
 
