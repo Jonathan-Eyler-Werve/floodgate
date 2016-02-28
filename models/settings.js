@@ -8,12 +8,12 @@ window.mute.getSettings = function () {
 
       if (items.settings) {
         // store the sync object on window
-        console.log("I found an item.settings in the sync")
         window.mute.settings = items.settings;
-
+        // message the settings object to the background scripts
+        chrome.runtime.sendMessage({"settings": window.mute.settings});
         // used to test for 'dirty' sync state
         window.mute.remoteSettings = items.settings;
-        console.log(window.mute.settings);
+        console.log("Settings gotten:", window.mute.settings);
       } else {
         // initalize the settings object
         window.mute.settings = {};

@@ -1,6 +1,7 @@
 // background.js
 
 if (window.mute === undefined) { window.mute = {} };
+if (window.mute.bg === undefined) { window.mute.bg = {} };
 
 $(function() {
 
@@ -12,6 +13,7 @@ $(function() {
       chrome.tabs.sendMessage(activeTab.id, {"status": "clicked_browser_action"});
     });
   });
+
 
   chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
@@ -26,18 +28,24 @@ $(function() {
         });
       }
 
-      if ( request.pageAction === "tutorial" ) {
+      if ( request.settings ) {
+        console.log("Settings recieved:", request.settings)
+      };
 
+      if ( request.pageAction === "tutorial" ) {
         chrome.tabs.create({'url': chrome.extension.getURL('views/tutorial.html')}, function(tab) {
           console.log("I made a turorial page");
+          window.mute.bg.tutorial();
         });
-
       }
-
 
     });
 
   console.log("background script runs")
+
+  // Tutorial interactions
+
+
 
 });
 

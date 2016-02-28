@@ -40,14 +40,10 @@
 
       "/controllers/background.js",
 
+      "/models/background-tests.js",
       "/models/cssLink.js",
-      "/models/filters.js",
-      "/models/imageHide.js",
       "/models/settings.js",
-      "/models/tests.js",
-      "/models/tweet.js",
-      "/models/userID.js",
-      "/models/words.js"
+      "/views/tutorial.js"
 
       ]
   },
