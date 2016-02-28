@@ -40,11 +40,10 @@
 
       "/controllers/background.js",
 
-      "/models/background-tests.js",
-      "/models/cssLink.js",
-      "/models/settings.js",
-      "/views/tutorial.js"
+      "/models/bg.tests.js",
+      "/models/bg.settings.js",
 
+      "/views/bg.tutorial.js"
       ]
   },
 

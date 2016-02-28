@@ -1,9 +1,9 @@
 // tutorial.js
 
 if (window.bg === undefined) { window.bg = {} };
+BG = window.bg;
 
-window.bg.tutorial = function () {
+BG.tutorial = function () {
   console.log("tutorial()")
-
 
 };

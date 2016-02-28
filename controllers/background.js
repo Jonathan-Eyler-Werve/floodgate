@@ -1,6 +1,7 @@
 // background.js
 
 if (window.bg === undefined) { window.bg = {} };
+BG = window.bg;
 
 $(function() {
 
@@ -18,9 +19,8 @@ $(function() {
     function(request, sender, sendResponse) {
       console.log("Message recieved:", request);
 
+      // sets icon to Active state
       if ( request.filterEvent === "matchFound" ) {
-        console.log("Message: ", request.filterEvent );
-        // sets icon to Active state
         chrome.browserAction.setIcon({
           path : "images/icon-active.png",
           tabId: sender.tab.id
@@ -28,26 +28,23 @@ $(function() {
       }
 
       if ( request.settings ) {
-        console.log("Settings recieved:", request.settings)
-        window.bg.settings = request.settings;
-        // used to check for "dirty" data state
-        window.bg.remoteSettings = request.settings;
+        BG.settings = request.settings;
+        BG.initialSettings = request.settings;
       };
 
       if ( request.pageAction === "tutorial" ) {
         chrome.tabs.create({'url': chrome.extension.getURL('views/tutorial.html')}, function(tab) {
           console.log("I made a turorial page");
-          window.bg.tutorial();
+          BG.tutorial();
         });
       }
 
     });
 
-  console.log("background script runs")
+  //poll for dirty data state, send settings to Chrome storage
 
-  // Tutorial interactions
-
-
+  BG.getSettings();
+  window.setInterval(BG.setSettings, 250);
 
 });
 
