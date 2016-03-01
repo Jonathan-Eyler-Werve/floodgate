@@ -6,25 +6,33 @@ BG = window.bg;
 BG.tutorialInitialize = function () {
 
   if (BG.settings) {
-    BG.settings.activeFilters.triggerWarning = false;
-    BG.settings.activeFilters.racialSlurs = false;
-    BG.settings.activeFilters.queerSlurs = false;
-    BG.settings.activeFilters.aggressionWords = false;
-    BG.settings.activeFilters.sexCrimeWords = false;
-    BG.settings.activeFilters.peopleMisogyny = false;
-    BG.settings.activeFilters.peopleWhiteSupremicist = false;
+
+    if (BG.settings.initialized) {
+      $("#tutorial--text").replaceWith(BG.textSettings);
+    } else {
+      $("#tutorial--text").replaceWith(BG.textTutorialStart);
+      BG.settings.activeFilters.triggerWarning = false;
+      BG.settings.activeFilters.racialSlurs = false;
+      BG.settings.activeFilters.queerSlurs = false;
+      BG.settings.activeFilters.aggressionWords = false;
+      BG.settings.activeFilters.sexCrimeWords = false;
+      BG.settings.activeFilters.peopleMisogyny = false;
+      BG.settings.activeFilters.peopleWhiteSupremicist = false;
+      $(".settings__footer button").show()
+    };
+
   } else {
     setTimeout(BG.tutorialInitialize, 250);
   }
 }
 
-BG.closeButton = function () {
+BG.closeButtons = function () {
   $(".btn--close-page").click(function() {
     close();
   });
 }
 
-BG.tutorialButton = function () {
+BG.tutorialButtons = function () {
 
   $("input#triggerWarning").click(function() {
     BG.settings.activeFilters.triggerWarning = !(BG.settings.activeFilters.triggerWarning);
@@ -54,38 +62,46 @@ BG.tutorialButton = function () {
     BG.settings.activeFilters.peopleWhiteSupremicist = !(BG.settings.activeFilters.peopleWhiteSupremicist);
   });
 
+  $("#btn--done").click(function() {
+    BG.settings.initialized = true;
+    $("#tutorial--text").replaceWith(BG.textTutorialConfirm);
+    $(".settings__footer button").hide();
+
+  });
+
 }
 
+
+BG.textTutorialConfirm = `
+  <div id="tutorial--text">
+    <h3>You're set up</h3>
+    <p>Floodgate will wrap things on Twitter based on your selections here. Hover over them to see what's inside.</p>
+    <p>You can turn filters on and off any time. To get to this page, click the Floodgate icon on the top right of your browser.</p>
+  </div>
+`
+BG.textSettings = `
+  <div id="tutorial--text">
+    <h3>Settings</h3>
+    <p>Floodgate will wrap content on Twitter based on your choices here.</p>
+  </div>
+`
+BG.textTutorialStart = `
+  <div id="tutorial--text">
+    <h3>Let's get set up</h3>
+    <p>Floodgate lets you set rules for your media intake, starting with Twitter.</p>
+    <p>Pick some things you'd like help with from the list.</p>
+  </div>
+`
+
 $(function() {
-  BG.getSettings();
+
+
+  $(".settings__footer button").hide();
   BG.tutorialInitialize();
-  BG.closeButton();
-  BG.tutorialButton();
+  BG.closeButtons();
+  BG.tutorialButtons();
   setInterval(BG.setSettings, 1000);
 });
 
 
 
-
-
-
-
-
-
-  // var activeFilters = window.mute.settings.activeFilters
-
-  // // set number of filters so we know which filter is running last
-  // window.mute.numberOfFilters = 0
-  // Object.keys(activeFilters).forEach(function (key) {
-  //   if (activeFilters[key]) {
-  //     window.mute.numberOfFilters += 1;
-  //   }
-  // });
-
-  // // run the filters
-  // Object.keys(activeFilters).forEach(function (key) {
-  //   if (activeFilters[key]) {
-  //     // console.log("Running a filter named:", key);
-  //     window.mute.filterTweets(window.mute.allFilters[key]);
-  //   }
-  // });
