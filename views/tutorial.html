@@ -15,7 +15,7 @@
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="/assets/vendor/foundation.min.css">
-    <link rel="stylesheet" href="/assets/stylesheets/filterScout.css">
+    <link rel="stylesheet" href="/assets/stylesheets/settings.css">
 
     <!-- Font Files -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -36,33 +36,55 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body class="settings">
     <div class="row">
       <div class="small-12 columns centered">
-        <div class="main">
 
-          <div id="wrapper"><!-- Main page content -->
+        <div class="row settings__header">
+            <div class="small-10 columns">
+              <h1>Floodgate</h1>
+            </div>
+            <div class="small-1 columns align-right">
+              <i class="fa fa-times fa-large"></i>
+            </div>
+        </div>
 
+        <div class="row settings__main">
 
-            <h1>Welcome to Deflector</h1>
+          <div class="large-5 columns flex">
+            <h3>Let's get set up</h3>
+            <p>Floodgate lets you set rules for your media intake, starting with Twitter.</p>
+            <p>Pick some things you'd like help with from the list. Next, we'll see what these can do.</p>
+          </div>
 
-            <p>Let's get started! What do you need help with?</p>
-
-            <ul id="tutorial--filters">
-              <li>Show me less racist language</li>
-              <li>Show me less homophobic language</li>
-              <li>Show me less agressive hostility</li>
-              <li>Show me less content about sexual assault</li>
-              <li>Mute content that contains a trigger warning</li>
-              <li>Mute people with a history of misogynist abuse</li>
-              <li>Mute people with a history of white supremecist or pro-nazi posts</li>
+          <div class="large-6 columns">
+            <ul class="settings__checkbox" id="tutorial--filters">
+              <fieldset>
+                <li><input id="trigger" type="checkbox"><label for="trigger">Wrap content that contains a trigger warning</label></li>
+                <li><input id="racism" type="checkbox"><label for="racism">Show me less racist language</label></li>
+                <li><input id="queer" type="checkbox"><label for="queer">Show me less homophobic language</label></li>
+                <li><input id="hostility" type="checkbox"><label for="hostility">Show me less agressive hostility</label></li>
+                <li><input id="sex" type="checkbox"><label for="sex">Warn me about sexual violence triggers</label></li>
+                <li><input id="abuse-gender" type="checkbox"><label for="abuse-gender">Mute accounts that send misogynist abuse</label></li>
+                <li><input id="abuse-race" type="checkbox"><label for="abuse-race">Mute White Supremecist accounts</label></li>
+              </fieldset>
             <ul>
+          </div>
+        </div>
 
-          </div><!-- /wrapper -->
-        </div><!-- /main -->
+        <div class="row settings__footer -last">
+          <div class="large-5 large-push-1 columns">
+            <button class="button large expanded radius secondary settings__save">Do this later</button>
+          </div>
+
+          <div class="large-5 large-pull-1 columns">
+            <button class="button large expanded radius settings__save">Next &nbsp <i class="fa fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+
       </div>
     </div>
-
   </body>
 
 </html>
