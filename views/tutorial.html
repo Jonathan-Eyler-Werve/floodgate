@@ -11,7 +11,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width"/>
 
-    <title>Filter Scout</title>
+    <title>Floodgate</title>
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="/assets/vendor/foundation.min.css">
@@ -45,7 +45,7 @@
               <h1>Floodgate</h1>
             </div>
             <div class="small-1 columns align-right">
-              <i class="fa fa-times fa-large"></i>
+              <i class="btn--close-page fa fa-times fa-large"></i>
             </div>
         </div>
 
@@ -60,13 +60,13 @@
           <div class="large-6 columns">
             <ul class="settings__checkbox" id="tutorial--filters">
               <fieldset>
-                <li><input id="trigger" type="checkbox"><label for="trigger">Wrap content that contains a trigger warning</label></li>
-                <li><input id="racism" type="checkbox"><label for="racism">Show me less racist language</label></li>
-                <li><input id="queer" type="checkbox"><label for="queer">Show me less homophobic language</label></li>
-                <li><input id="hostility" type="checkbox"><label for="hostility">Show me less agressive hostility</label></li>
-                <li><input id="sex" type="checkbox"><label for="sex">Warn me about sexual violence triggers</label></li>
-                <li><input id="abuse-gender" type="checkbox"><label for="abuse-gender">Mute accounts that send misogynist abuse</label></li>
-                <li><input id="abuse-race" type="checkbox"><label for="abuse-race">Mute White Supremecist accounts</label></li>
+                <li><input id="triggerWarning" type="checkbox"><label for="triggerWarning">Wrap content that contains a trigger warning</label></li>
+                <li><input id="racialSlurs" type="checkbox"><label for="racialSlurs">Show me less racist language</label></li>
+                <li><input id="queerSlurs" type="checkbox"><label for="queerSlurs">Show me less homophobic language</label></li>
+                <li><input id="aggressionWords" type="checkbox"><label for="aggressionWords">Show me less agressive hostility</label></li>
+                <li><input id="sexCrimeWords" type="checkbox"><label for="sexCrimeWords">Warn me about sexual violence triggers</label></li>
+                <li><input id="peopleMisogyny" type="checkbox"><label for="peopleMisogyny">Mute accounts that send misogynist abuse</label></li>
+                <li><input id="peopleWhiteSupremicist" type="checkbox"><label for="peopleWhiteSupremicist">Mute White Supremecist accounts</label></li>
               </fieldset>
             <ul>
           </div>
@@ -74,7 +74,7 @@
 
         <div class="row settings__footer -last">
           <div class="large-5 large-push-1 columns">
-            <button class="button large expanded radius secondary settings__save">Do this later</button>
+            <button class="btn--close-page button large expanded radius secondary hollow settings__save">Do this later</button>
           </div>
 
           <div class="large-5 large-pull-1 columns">

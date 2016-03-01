@@ -90,6 +90,10 @@ button:hover, .button:hover, button:active, .button:active, button:focus, .butto
   background-color: #365C37;
 }
 
+.pointer, .btn--close-page, .settings__checkbox label {
+  cursor: pointer;
+}
+
 /*** custom checkboxes ***/
 
 input[type=checkbox] { display:none; } /* to hide the checkbox itself */

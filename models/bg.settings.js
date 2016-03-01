@@ -9,8 +9,8 @@ BG.getSettings = function () {
     if (items.settings) {
       // store the sync object on window
       BG.settings = items.settings;
-      // used to test for 'dirty' sync state
-      BG.initialSettings = items.settings;
+      // copy values to test for 'dirty' sync state
+      BG.initialSettings = JSON.parse(JSON.stringify(items.settings));
       console.log("Settings gotten:", BG.settings);
     } else {
       // initalize the settings object
@@ -25,7 +25,7 @@ BG.getSettings = function () {
 };
 
 BG.setSettings = function() {
-  if (BG.settings !== BG.initialSettings) {
+  if ( JSON.stringify(BG.settings) !== JSON.stringify(BG.initialSettings) ) {
     chrome.storage.sync.set({settings: BG.settings}, function() {
       BG.getSettings();
     });

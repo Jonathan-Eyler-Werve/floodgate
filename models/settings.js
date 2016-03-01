@@ -10,8 +10,8 @@ window.mute.getSettings = function () {
       window.mute.settings = items.settings;
       // message the settings object to the background scripts
       chrome.runtime.sendMessage({"settings": window.mute.settings});
-      // used to test for 'dirty' sync state
-      window.mute.initialSettings = items.settings;
+      // copy values to test for 'dirty' sync state
+      window.mute.initialSettings = JSON.parse(JSON.stringify(items.settings));
       console.log("Settings gotten:", window.mute.settings);
     } else {
       // initalize the settings object
@@ -50,7 +50,7 @@ window.mute.launchSettingsPage = function () {
 
 window.mute.setSettings = function () {
 
-  if (window.mute.settings !== window.mute.initialSettings) {
+  if ( JSON.stringify(BG.settings) !== JSON.stringify(BG.initialSettings) ) {
     chrome.storage.sync.set({settings: window.mute.settings}, function() {
       window.mute.getSettings();
     });
