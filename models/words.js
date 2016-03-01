@@ -268,6 +268,7 @@ window.mute.allFilters = {
     "daddy porn",
     "mommy porn",
     "child abuse",
+    "sexual slavery",
 
     // drugs associated with rape
     "Roofies",

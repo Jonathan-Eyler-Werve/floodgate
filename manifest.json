@@ -50,7 +50,8 @@
   "permissions": ["storage"],
 
   "web_accessible_resources": [
-    "/assets/stylesheets/filterScout.css",
+    "/assets/stylesheets/twitter.css",
+    "/assets/stylesheets/settings.css",
     "/assets/vendor/foundation.min.css",
     "/assets/vendor/jquery-2.2.0.min.js",
     "/assets/vendor/handlebars-v4.0.5.js",
