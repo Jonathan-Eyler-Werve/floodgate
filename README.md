@@ -1,5 +1,4 @@
-# FilterScout 
-(working title) 
+# Floodgate
 
 [Trigger warning: we're discussing abuse and harassment.]
 
