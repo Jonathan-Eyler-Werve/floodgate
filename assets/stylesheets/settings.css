@@ -40,7 +40,6 @@ body.settings h1 {
 }
 
 .settings .-last {
-  margin-bottom: 150px;
   padding-bottom: 60px;
   background-color: #ffffff;
 }
@@ -94,6 +93,24 @@ button:hover, .button:hover, button:active, .button:active, button:focus, .butto
   cursor: pointer;
 }
 
+
+/* closing credits */
+
+.credits {
+  margin-bottom: 150px;
+  font-size: 14px;
+  color: #999999;
+  padding: 10px 0 0 50px;
+}
+
+.credits a {
+  color: #666666;
+}
+
+.credits a:hover {
+  text-decoration: underline;
+}
+
 /*** custom checkboxes ***/
 
 input[type=checkbox] { display:none; } /* to hide the checkbox itself */
@@ -130,4 +147,4 @@ input[type=checkbox]:checked + label:before {
   content: "\f046";
   color: #365C37;
   letter-spacing: 6px;
-} /* allow space for check mark */
+} /* allow space for check mark
