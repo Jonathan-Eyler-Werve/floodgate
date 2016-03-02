@@ -29,7 +29,6 @@
         "/models/filters.js",
         "/models/imageHide.js",
         "/models/settings.js",
-        // "/models/tests.js",
         "/models/tweet.js",
         "/models/userID.js",
         "/models/words.js"
@@ -43,7 +42,6 @@
 
       "/controllers/background.js",
 
-      // "/models/bg.tests.js",
       "/models/bg.settings.js",
 
       "/views/bg.tutorial.js"
