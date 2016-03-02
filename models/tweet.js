@@ -45,7 +45,7 @@ window.mute.filterTweets = function (triggerWords) {
       tweet.timesScanned += 1;
 
       // append justification to muted tweet, but only on last pass of filter
-      appendText = '<div class="filterScout reason-for-mute">Muted by Filter Scout because it includes: "' + tweet.reasons.join('", "') + '"</p>';
+      appendText = '<div class="filterScout reason-for-mute">Muted by Floodgate because it includes: "' + tweet.reasons.join('", "') + '"</p>';
       if (
         ( tweet.filterAction ) &&
         ( tweet.timesScanned === window.mute.numberOfFilters )

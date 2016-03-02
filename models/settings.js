@@ -27,25 +27,18 @@ window.mute.getSettings = function () {
   });
 };
 
-window.mute.launchSettingsPage = function () {
+window.mute.launchTutorial = function () {
+  if (window.mute.settings) {
 
-  if (window.mute.settings.initialized === false) {
-    // open the tutorial page
+    if (window.mute.settings.initialized === false) {
+      chrome.runtime.sendMessage({"pageAction": "tutorial"});
+    };
+
   } else {
-    // open the modal in default page
-  }
 
-  // hardcoded for testing
-  window.mute.settings.initialized = true;
-  window.mute.settings.activeFilters = {
-    racialSlurs: true,
-    queerSlurs: true,
-    triggerWarning: true,
-    aggressionWords: true,
-    sexCrimeWords: true
+    setTimeout(window.mute.launchTutorial, 250);
+
   };
-
-  window.mute.setSettings();
 };
 
 window.mute.setSettings = function () {

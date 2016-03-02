@@ -8,7 +8,16 @@ BG.tutorialInitialize = function () {
   if (BG.settings) {
 
     if (BG.settings.initialized) {
+
       $("#tutorial--text").replaceWith(BG.textSettings);
+      if (BG.settings.activeFilters.triggerWarning) { $("input#triggerWarning").prop('checked', true); };
+      if (BG.settings.activeFilters.racialSlurs) { $("input#racialSlurs").prop('checked', true); };
+      if (BG.settings.activeFilters.queerSlurs) { $("input#queerSlurs").prop('checked', true); };
+      if (BG.settings.activeFilters.aggressionWords) { $("input#aggressionWords").prop('checked', true); };
+      if (BG.settings.activeFilters.sexCrimeWords) { $("input#sexCrimeWords").prop('checked', true); };
+
+      // check all the checkboxes on page based on settings data
+
     } else {
       $("#tutorial--text").replaceWith(BG.textTutorialStart);
       BG.settings.activeFilters.triggerWarning = false;
@@ -16,8 +25,6 @@ BG.tutorialInitialize = function () {
       BG.settings.activeFilters.queerSlurs = false;
       BG.settings.activeFilters.aggressionWords = false;
       BG.settings.activeFilters.sexCrimeWords = false;
-      BG.settings.activeFilters.peopleMisogyny = false;
-      BG.settings.activeFilters.peopleWhiteSupremicist = false;
       $(".settings__footer button").show()
     };
 
@@ -52,14 +59,6 @@ BG.tutorialButtons = function () {
 
   $("input#sexCrimeWords").click(function() {
     BG.settings.activeFilters.sexCrimeWords = !(BG.settings.activeFilters.sexCrimeWords);
-  });
-
-  $("input#peopleMisogyny").click(function() {
-    BG.settings.activeFilters.peopleMisogyny = !(BG.settings.activeFilters.peopleMisogyny);
-  });
-
-  $("input#peopleWhiteSupremicist").click(function() {
-    BG.settings.activeFilters.peopleWhiteSupremicist = !(BG.settings.activeFilters.peopleWhiteSupremicist);
   });
 
   $("#btn--done").click(function() {
