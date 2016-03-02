@@ -1,16 +1,19 @@
 {
   "manifest_version": 2,
-  "name": "Filter Scout",
-  "version": "0.0.2",
-  "description": "FilterScout hides unwanted content on the Web.",
+  "name": "Floodgate",
+  "version": "0.0.3",
+  "description": "Floodgate hides unwanted content on the Web.",
+  "author": "Civic Workbench",
+  "short_name": "Floodgate",
+
   "icons": {
-    "19": "images/icon-default-19.png",
-    "38": "images/icon-default.png"},
+    "19": "/assets/images/icon-default-19.png",
+    "38": "/assets/images/icon-default.png"},
 
   "browser_action": {
     "default_icon": {
-            "19": "images/icon-default-19.png",
-            "38": "images/icon-default.png"
+            "19": "/assets/images/icon-default-19.png",
+            "38": "/assets/images/icon-default.png"
           }
   },
 
@@ -18,25 +21,42 @@
     {
       "matches": ["*://*.twitter.com/*"],
       "js": [
-        "jquery-2.2.0.min.js",
-        "content.js",
-        "cssLink.js",
-        "getUserID.js",
-        "imageHide.js",
-        "settingsPage.js",
-        "tests.js",
-        "tweet.js",
-        "words.js"
+        "/assets/vendor/jquery-2.2.0.min.js",
+
+        "/controllers/content.js",
+
+        "/models/cssLink.js",
+        "/models/filters.js",
+        "/models/imageHide.js",
+        "/models/settings.js",
+        "/models/tweet.js",
+        "/models/userID.js",
+        "/models/words.js"
       ]
     }
   ],
 
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+      "/assets/vendor/jquery-2.2.0.min.js",
+
+      "/controllers/background.js",
+
+      "/models/bg.settings.js",
+
+      "/views/bg.tutorial.js"
+      ]
   },
 
   "permissions": ["storage"],
 
-  "web_accessible_resources": ["stylesheets/filterScout.css"]
+  "web_accessible_resources": [
+    "/assets/stylesheets/twitter.css",
+    "/assets/stylesheets/settings.css",
+    "/assets/vendor/foundation.min.css",
+    "/assets/vendor/jquery-2.2.0.min.js",
+    "/assets/vendor/handlebars-v4.0.5.js",
+    "/views/tutorial.html"
+  ]
 
 }

@@ -1,0 +1,150 @@
+/* FONT AWESOME */
+
+.fa.fa-large {
+  font-size: 40px;
+  position: relative;
+  top: 15px;
+}
+
+@media (max-width: 640px) {
+  .fa.fa-large {
+    font-size: 22px;
+    top: 8px;
+  }
+}
+
+/* SETTINGS PAGES */
+
+body.settings {
+  background-color: #dddddd;
+  font-family: Cabin, Helvetica, Ariel, sans-serif !important;
+  font-size: 20px;
+}
+
+body.settings h1 {
+  font-family: Cabin, Helvetica, Ariel, sans-serif !important;
+  font-weight: 700
+}
+
+.settings__header {
+  color: #ffffff;
+  padding: 50px 50px 40px 50px;
+  margin-top: 30px;
+  background-color: #477848;
+  border-radius: 30px 30px 0 0;
+}
+
+.settings__main {
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+.settings .-last {
+  padding-bottom: 60px;
+  background-color: #ffffff;
+}
+
+.settings__footer {
+  padding: 20px 50px 50px 50px;
+}
+
+@media (max-width: 640px) {
+  body.settings {
+    font-size: 16px;
+  }
+
+  .settings__header {
+    margin: 0 10px 0 10px;
+    padding: 20px;
+    border-radius: 0;
+  }
+
+  .settings__main {
+    padding: 30px;
+    margin: 0px 10px 50px 10px;
+  }
+
+
+  .settings .-last {
+    margin-bottom: 30px;
+  }
+}
+
+.settings__checkbox li {
+  list-style: none;
+}
+
+.settings_checkbox label {
+  line-height: 110%;
+}
+
+
+/* Foundaton overrides*/
+
+button, .button {
+  background-color: #477848;
+}
+
+button:hover, .button:hover, button:active, .button:active, button:focus, .button:focus {
+  background-color: #365C37;
+}
+
+.pointer, .btn--close-page, .settings__checkbox label {
+  cursor: pointer;
+}
+
+
+/* closing credits */
+
+.credits {
+  margin-bottom: 150px;
+  font-size: 14px;
+  color: #999999;
+  padding: 10px 0 0 50px;
+}
+
+.credits a {
+  color: #666666;
+}
+
+.credits a:hover {
+  text-decoration: underline;
+}
+
+/*** custom checkboxes ***/
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  font-size: 28px;
+  display: inline-block;
+}
+
+input[type=checkbox] + label {
+  font-size: 20px;
+  background: #eeeeee;
+  width: 100%;
+  padding: 0 20px 0 20px;
+  margin: 2px 0 0 0;
+}
+
+input[type=checkbox]:checked + label {
+  background: #E6F8E0;
+}
+
+input[type=checkbox] + label:before {
+  content: "\f096";
+  position: relative;
+  top: 3px;
+} /* unchecked icon */
+
+input[type=checkbox] + label:before {
+  letter-spacing: 10px;
+  padding-right: 5px;
+} /* space between checkbox and label */
+
+input[type=checkbox]:checked + label:before {
+  content: "\f046";
+  color: #365C37;
+  letter-spacing: 6px;
+} /* allow space for check mark

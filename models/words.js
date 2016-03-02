@@ -82,6 +82,7 @@ window.mute.allFilters = {
     "natzi",
     "Niglet",
     "Nig nog",
+    "nigger",
     "niggur",
     "nigguh",
     "niggah",
@@ -251,13 +252,12 @@ window.mute.allFilters = {
     "cock in your",
     "dick in your",
     "should fuck you",
-    "paedophile",
-    "pedophile"
 
     // hooboy
     "incest",
     "Pseudo-incest",
     "pedophile",
+    "paedophile",
     "molester",
     "molested",
     "sexual abuse",
@@ -268,6 +268,7 @@ window.mute.allFilters = {
     "daddy porn",
     "mommy porn",
     "child abuse",
+    "sexual slavery",
 
     // drugs associated with rape
     "Roofies",
@@ -303,7 +304,10 @@ window.mute.allFilters = {
     "antiGG",
     "she's a fat",
     "she's fat",
-    "die bitch"
+    "die bitch",
+    "You're part of the problem",
+    "dick in ya mouth",
+    "#gamergate"
   ],
 
   triggerWarning: [
