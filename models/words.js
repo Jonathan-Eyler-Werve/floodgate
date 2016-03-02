@@ -68,8 +68,6 @@ window.mute.allFilters = {
     "jew brainwashing",
     "Khokhol",
     "Kike",
-    "Klansman",
-    "KKK",
     "Macaca",
     "Moon Cricket",
     "Mooncricket",
