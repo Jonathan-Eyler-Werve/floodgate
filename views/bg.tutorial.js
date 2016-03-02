@@ -70,7 +70,6 @@ BG.tutorialButtons = function () {
 
 }
 
-
 BG.textTutorialConfirm = `
   <div id="tutorial--text">
     <h3>You're set up</h3>
@@ -93,13 +92,12 @@ BG.textTutorialStart = `
 `
 
 $(function() {
-
-
+  BG.getSettings();
   $(".settings__footer button").hide();
   BG.tutorialInitialize();
   BG.closeButtons();
   BG.tutorialButtons();
-  setInterval(BG.setSettings, 1000);
+  setInterval(BG.setSettings, 500);
 });
 
 
