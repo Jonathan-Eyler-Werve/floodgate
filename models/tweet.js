@@ -31,10 +31,12 @@ window.mute.filterTweets = function (triggerWords) {
         var match = regex.test(tweetContent + " " + tweetName + " " + tweetRetweeterName);
 
         if (match) {
+          // builds collection used to explain why filter was applied
           tweet.reasons.push(word)
           tweet.filterAction = "muted"
 
-          $(tweet).find(".AdaptiveMedia, button, iframe, .stream-item-footer, .stream-item-header, .tweet-content, .tweet-context, .tweet-text").addClass("mute-this");
+          var selectorForMute = ".AdaptiveMedia, button, iframe, .stream-item-footer, .stream-item-header, .tweet-content, .tweet-context, .tweet-text";
+          $(tweet).find(selectorForMute).addClass("mute-this");
 
           window.mute.filterTweets.muteStuff(tweet, tweetContent);
           window.mute.filterTweets.matchFound = true;

@@ -73,14 +73,14 @@ BG.tutorialButtons = function () {
 BG.textTutorialConfirm = `
   <div id="tutorial--text">
     <h3>You're set up</h3>
-    <p>Floodgate will wrap things on Twitter based on your selections here. Hover over them to see what's inside.</p>
+    <p>Floodgate will mute things on Twitter based on your selections here. Hover over them to see what's inside.</p>
     <p>You can turn filters on and off any time. To get to this page, click the Floodgate icon on the top right of your browser.</p>
   </div>
 `
 BG.textSettings = `
   <div id="tutorial--text">
     <h3>Settings</h3>
-    <p>Floodgate will wrap content on Twitter based on your choices here.</p>
+    <p>Floodgate will mute content on Twitter based on your choices here.</p>
   </div>
 `
 BG.textTutorialStart = `

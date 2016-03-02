@@ -29,13 +29,12 @@ BG.messageListener = function (request, sender, sendResponse) {
 
   if ( request.settings ) {
     BG.settings = request.settings;
-    BG.initialSettings = request.settings;
+    BG.initialSettings = JSON.parse(JSON.stringify(request.settings));
   };
 
   if ( request.pageAction === "tutorial" ) {
     chrome.tabs.create({'url': chrome.extension.getURL('views/tutorial.html')}, function(tab) {
       console.log("I made a turorial page");
-
     });
   }
 }

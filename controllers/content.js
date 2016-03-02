@@ -16,11 +16,21 @@ $(function() {
   // start a loop that rechecks for unfiltered stuff
   window.mute.filterIntervalID = window.setInterval(window.mute.runFilters, 250);
 
+  chrome.extension.onMessage.addListener(
+    function(message, sender, sendResponse) {
+      console.log("message recieved:", message);
+      if (message.status === "settings_updated") {
+        window.mute.getSettings();
+        window.mute.refreshFilters();
+      }
+    }
+  );
+
 });
 
 // EXAMPLE
-// chrome.runtime.onMessage.addListener(
-//   function(request, sender, sendResponse) {
+// chrome.extension.onMessage.addListener(
+//   function(message, sender, sendResponse) {
 //
 //   }
 // );

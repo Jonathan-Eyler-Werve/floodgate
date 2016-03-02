@@ -12,6 +12,7 @@ BG.getSettings = function () {
       // copy values to test for 'dirty' sync state
       BG.initialSettings = JSON.parse(JSON.stringify(items.settings));
       console.log("Settings gotten:", BG.settings);
+
     } else {
       // initalize the settings object
       BG.settings = {};
@@ -27,7 +28,17 @@ BG.getSettings = function () {
 BG.setSettings = function() {
   if ( JSON.stringify(BG.settings) !== JSON.stringify(BG.initialSettings) ) {
     chrome.storage.sync.set({settings: BG.settings}, function() {
+
       BG.getSettings();
+
+      // Notify all tabs of settings change
+      chrome.tabs.query({active: false, currentWindow: true}, function(tabs) {
+        var message = {"status": "settings_updated"};
+        for (var i=0; i<tabs.length; ++i) {
+          chrome.tabs.sendMessage(tabs[i].id, message);
+        };
+      });
+
     });
   }
 };

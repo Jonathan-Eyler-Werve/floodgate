@@ -39,3 +39,10 @@ window.mute.runFilters = function () {
   });
 
 };
+
+// undo filters from entire page so settings changes propegate
+window.mute.refreshFilters = function () {
+
+  if (window.location.hostname === "twitter.com") { window.location.reload() };
+
+}
