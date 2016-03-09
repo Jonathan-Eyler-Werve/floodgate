@@ -1,22 +1,22 @@
 {
   "manifest_version": 2,
   "name": "Floodgate",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Floodgate hides unwanted content on the Web.",
   "author": "Civic Workbench",
   "short_name": "Floodgate",
 
   "icons": {
-    "19": "/assets/images/wave--19-icon--003.png",
-    "38": "/assets/images/wave--38-icon--003.png",
-    "128": "/assets/images/wave--128x--003.png"
+    "19": "/assets/images/wave--19-icon--004.png",
+    "38": "/assets/images/wave--38-icon--004.png",
+    "128": "/assets/images/wave--128x--004.png"
     },
 
   "browser_action": {
     "default_icon": {
-            "19": "/assets/images/wave--19-icon--003.png",
-            "38": "/assets/images/wave--38-icon--003.png",
-            "128": "/assets/images/wave--128x--003.png"
+            "19": "/assets/images/wave--19-icon--004.png",
+            "38": "/assets/images/wave--38-icon--004.png",
+            "128": "/assets/images/wave--128x--004.png"
           }
   },
 
