@@ -27,7 +27,7 @@ window.mute.filterTweets = function (triggerWords) {
 
       $.each(triggerWords, function(index, word){
 
-        var regex = new RegExp("(\\b|#)" + word.toLowerCase() + "(\\b|s|es|ies|able|ed|ing|'s)");
+        var regex = new RegExp('(\\b|#|"|\')' + word.toLowerCase() + '(\\b|s|es|ies|able|ed|ing|d|\'s|"|\')');
         var match = regex.test(tweetContent + " " + tweetName + " " + tweetRetweeterName);
         if (match) {
           // builds collection used to explain why filter was applied
