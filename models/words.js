@@ -277,9 +277,10 @@ window.mute.allFilters = {
     "should fuck you",
     "pig fucker",
     "dumb fascist",
-    "retard ",
+    "retard",
     "fat face",
     "bitch",
+    "kill yourself",
     "kill your",
     "fuck you",
     "hang yourself",
@@ -305,11 +306,11 @@ window.mute.allFilters = {
     "you asshole",
     "stop being fat",
     "PRfags",
-    "sjw's"
+    "sjw's",
+    "sjw"
   ],
 
   triggerWarning: [
-    "TW",
     "triggerwarning",
     "contentwarning",
     "content warning",
