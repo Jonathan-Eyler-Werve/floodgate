@@ -7,6 +7,7 @@ window.mute.allFilters = {
 
   racialSlurs: [
     "test-stub-sibmeivmsobmsovnwodskfwdkvob",
+    "araby",
     "Aryan",
     "Alligator bait",
     "gator bait",
@@ -29,6 +30,7 @@ window.mute.allFilters = {
     "Bootlip",
     "Buddhahead",
     "Burrhead",
+    "brown trash",
     "Camel Jockey",
     "Chee-chee",
     "Chernozhopy",
@@ -87,6 +89,7 @@ window.mute.allFilters = {
     "niggress",
     "nigette",
     "Northern Monkey",
+    "parasitic tribes",
     "Peckerwood",
     "Pickaninny",
     "Porch monkey",
@@ -130,7 +133,8 @@ window.mute.allFilters = {
     "whitegirlsaremagic",
     "Zipperhead",
     "卐",
-    "not racist but"
+    "not racist but",
+    "you'll be deported"
   ],
 
   queerSlurs: [
@@ -304,6 +308,7 @@ window.mute.allFilters = {
     "demasculinized",
     "matriarchy",
     "you asshole",
+    "you mean nothing",
     "stop being fat",
     "PRfags",
     "sjw's",
