@@ -5,6 +5,11 @@ var FG = window.floodgate;
 
 FG.allFilters = {
 
+  pokemonTest: [
+    "pokemon",
+    "pikachu"
+  ],
+
   racialSlurs: [
     "test-stub-sibmeivmsobmsovnwodskfwdkvob",
     "araby",
@@ -312,7 +317,16 @@ FG.allFilters = {
     "stop being fat",
     "PRfags",
     "sjw's",
-    "sjw"
+    "sjw",
+    "stfu",
+    "white knight",
+    "whiteknight",
+    "stop being fat",
+    "race card",
+    "matriarchy",
+    "fuckface",
+    "you asshole",
+    "whatever the fuck I want"
   ],
 
   triggerWarning: [
