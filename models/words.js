@@ -1,9 +1,9 @@
 // words.js
 
-if (window.mute === undefined) { window.mute = {} };
+if (window.floodgate === undefined) { window.floodgate = {} };
+var FG = window.floodgate;
 
-
-window.mute.allFilters = {
+FG.allFilters = {
 
   racialSlurs: [
     "test-stub-sibmeivmsobmsovnwodskfwdkvob",

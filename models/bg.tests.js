@@ -1,7 +1,8 @@
 //background-tests.js
 
 if (window.bg === undefined) { window.bg = {} };
-BG = window.bg;
+
+var BG = window.bg;
 
 $(function() {
 

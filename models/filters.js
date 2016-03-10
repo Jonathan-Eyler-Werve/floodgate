@@ -1,32 +1,33 @@
 // filters.js
 
-if (window.mute === undefined) { window.mute = {} };
+if (window.floodgate === undefined) { window.floodgate = {} };
+var FG = window.floodgate;
 
-window.mute.runFilters = function () {
+FG.runFilters = function () {
 
-  // poll quickly until settings are initialized
-  if (window.mute.settings === undefined) {
-    window.setTimeout(window.mute.runFilters, 50);
+  // poll quickly until settings are ready
+  if (FG.settings === undefined) {
+    window.setTimeout(FG.runFilters, 50);
     console.log("Fast polling until chrome.storage responds");
     return
   };
 
-  if (window.mute.settings.initialized === false) {
-    console.log("running launchSettingsPage")
-    window.mute.launchSettingsPage();
+  // start tutorial if user state is not initialized
+  if (FG.settings.initialized === false) {
+    FG.launchSettingsPage();
     return
   }
 
-  // synced settings.activeFilters has {key: boolean}, the local .allFilters has {key: array}
+  // synced settings.activeFilters has {key: boolean}, the local FG.allFilters has {key: array}
   // keys are the same
 
-  var activeFilters = window.mute.settings.activeFilters
+  var activeFilters = FG.settings.activeFilters
 
   // set number of filters so we know which filter is running last
-  window.mute.numberOfFilters = 0
+  FG.numberOfFilters = 0
   Object.keys(activeFilters).forEach(function (key) {
     if (activeFilters[key]) {
-      window.mute.numberOfFilters += 1;
+      FG.numberOfFilters += 1;
     }
   });
 
@@ -34,14 +35,14 @@ window.mute.runFilters = function () {
   Object.keys(activeFilters).forEach(function (key) {
     if (activeFilters[key]) {
       // console.log("Running a filter named:", key);
-      window.mute.filterTweets(window.mute.allFilters[key]);
+      FG.filterTweets(FG.allFilters[key]);
     }
   });
 
 };
 
 // undo filters from entire page so settings changes propegate
-window.mute.refreshFilters = function () {
+FG.refreshFilters = function () {
 
   if (window.location.hostname === "twitter.com") { window.location.reload() };
 

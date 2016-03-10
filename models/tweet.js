@@ -1,12 +1,13 @@
 // tweet.js
 
-if (window.mute === undefined) { window.mute = {} };
+if (window.floodgate === undefined) { window.floodgate = {} };
+var FG = window.floodgate;
 
-window.mute.filterTweets = function (triggerWords) {
+FG.filterTweets = function (triggerWords) {
 
-  window.mute.filterTweets.matchFound = false
+  FG.filterTweets.matchFound = false
 
-  var tweets = window.mute.filterTweets.getTweets();
+  var tweets = FG.filterTweets.getTweets();
 
   tweets.each( function(index, tweet){
 
@@ -16,7 +17,7 @@ window.mute.filterTweets = function (triggerWords) {
 
     if (
         // scan once per filter running
-        ( tweet.timesScanned < window.mute.numberOfFilters ) &&
+        ( tweet.timesScanned < FG.numberOfFilters ) &&
         // skip this loop if inside a steam-item-content, avoids double scan in notifications
         ( $($(tweet).parents(".stream-item-content")).size() === 0 )
       ) {
@@ -37,8 +38,8 @@ window.mute.filterTweets = function (triggerWords) {
           var selectorForMute = ".AdaptiveMedia, button, iframe, .stream-item-footer, .stream-item-header, .tweet-content, .tweet-context, .tweet-text";
           $(tweet).find(selectorForMute).addClass("mute-this");
 
-          window.mute.filterTweets.muteStuff(tweet, tweetContent);
-          window.mute.filterTweets.matchFound = true;
+          FG.filterTweets.muteStuff(tweet, tweetContent);
+          FG.filterTweets.matchFound = true;
         }
 
       });
@@ -49,7 +50,7 @@ window.mute.filterTweets = function (triggerWords) {
       appendText = '<div class="filterScout reason-for-mute">Muted by Floodgate because it includes: "' + tweet.reasons.join('", "') + '"</p>';
       if (
         ( tweet.filterAction ) &&
-        ( tweet.timesScanned === window.mute.numberOfFilters )
+        ( tweet.timesScanned === FG.numberOfFilters )
       ) {
           $(tweet).append(appendText)
       };
@@ -57,19 +58,19 @@ window.mute.filterTweets = function (triggerWords) {
     };
   });
 
-  if (window.mute.filterTweets.matchFound === true)
+  if (FG.filterTweets.matchFound === true)
     chrome.runtime.sendMessage({filterEvent: "matchFound"});
 };
 
-window.mute.filterTweets.getTweets = function () {
+FG.filterTweets.getTweets = function () {
   return $(".tweet, .stream-item-content, .QuoteTweet");
 };
 
-window.mute.filterTweets.muteStuff = function (tweet, tweetContent) {
+FG.filterTweets.muteStuff = function (tweet, tweetContent) {
   $(tweet).css("background-color", "#E6F8E0");
   $(tweet).css("border-color", "#CFE9C7");
   $(tweet).css("color", "#B8CDB9");
   $(tweet).find("a").css("color", "#A6B6A7")
   $(tweet).find("strong, b, .tweet-text").css("color", "#B8CDB9")
-  window.mute.imageHide(tweet);
+  FG.imageHide(tweet);
 }

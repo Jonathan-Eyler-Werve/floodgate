@@ -1,27 +1,28 @@
 // content.js
 
-if (window.mute === undefined) { window.mute = {} };
+if (window.floodgate === undefined) { window.floodgate = {} };
+var FG = window.floodgate;
 
 $(function() {
 
   // quick start
-  window.mute.getSettings();
-  window.mute.runFilters();
+  FG.getSettings();
+  FG.runFilters();
 
   // initialize other assets
-  window.mute.launchTutorial();
-  window.mute.addStylesheet("/assets/stylesheets/twitter.css");
-  window.mute.getUserID();
+  FG.launchTutorial();
+  FG.addStylesheet("/assets/stylesheets/twitter.css");
+  FG.getUserID();
 
   // start a loop that rechecks for unfiltered stuff
-  window.mute.filterIntervalID = window.setInterval(window.mute.runFilters, 250);
+  FG.filterIntervalID = window.setInterval(FG.runFilters, 250);
 
   chrome.extension.onMessage.addListener(
     function(message, sender, sendResponse) {
       console.log("message recieved:", message);
       if (message.status === "settings_updated") {
-        window.mute.getSettings();
-        window.mute.refreshFilters();
+        FG.getSettings();
+        FG.refreshFilters();
       }
     }
   );

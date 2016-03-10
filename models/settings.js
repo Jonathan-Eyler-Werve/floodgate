@@ -1,51 +1,52 @@
 // settingsPage.js
 
-if (window.mute === undefined) { window.mute = {} };
+if (window.floodgate === undefined) { window.floodgate = {} };
+var FG = window.floodgate;
 
-window.mute.getSettings = function () {
+FG.getSettings = function () {
   chrome.storage.sync.get('settings', function(items) {
 
     if (items.settings) {
       // store the sync object on window
-      window.mute.settings = items.settings;
+      FG.settings = items.settings;
       // message the settings object to the background scripts
-      chrome.runtime.sendMessage({"settings": window.mute.settings});
+      chrome.runtime.sendMessage({"settings": FG.settings});
       // copy values to test for 'dirty' sync state
-      window.mute.initialSettings = JSON.parse(JSON.stringify(items.settings));
-      console.log("Settings gotten:", window.mute.settings);
+      FG.initialSettings = JSON.parse(JSON.stringify(items.settings));
+      console.log("Settings gotten:", FG.settings);
     } else {
       // initalize the settings object
-      window.mute.settings = {};
-      window.mute.settings.initialized = false;
-      window.mute.settings.activeFilters = {};
-      chrome.storage.sync.set({settings: window.mute.settings}, function() {
+      FG.settings = {};
+      FG.settings.initialized = false;
+      FG.settings.activeFilters = {};
+      chrome.storage.sync.set({settings: FG.settings}, function() {
         console.log("I synced these settings from .getSettings");
-        console.log(window.mute.settings)
+        console.log(FG.settings)
       });
     };
 
   });
 };
 
-window.mute.launchTutorial = function () {
-  if (window.mute.settings) {
+FG.launchTutorial = function () {
+  if (FG.settings) {
 
-    if (window.mute.settings.initialized === false) {
+    if (FG.settings.initialized === false) {
       chrome.runtime.sendMessage({"pageAction": "tutorial"});
     };
 
   } else {
 
-    setTimeout(window.mute.launchTutorial, 250);
+    setTimeout(FG.launchTutorial, 250);
 
   };
 };
 
-window.mute.setSettings = function () {
+FG.setSettings = function () {
 
   if ( JSON.stringify(BG.settings) !== JSON.stringify(BG.initialSettings) ) {
-    chrome.storage.sync.set({settings: window.mute.settings}, function() {
-      window.mute.getSettings();
+    chrome.storage.sync.set({settings: FG.settings}, function() {
+      FG.getSettings();
     });
   }
 };

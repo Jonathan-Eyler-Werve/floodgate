@@ -1,9 +1,8 @@
-
-if (window.mute === undefined) { window.mute = {} };
-
+if (window.floodgate === undefined) { window.floodgate = {} };
+var FG = window.floodgate;
 
 // takes a stylesheet file path as a string
-window.mute.addStylesheet = function (path) {
+FG.addStylesheet = function (path) {
 
   var link = document.createElement("link");
   link.href = chrome.extension.getURL(path);

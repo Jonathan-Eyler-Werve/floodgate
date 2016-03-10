@@ -1,45 +1,46 @@
 // tests.js
 
-if (window.mute === undefined) { window.mute = {} };
+if (window.floodgate === undefined) { window.floodgate = {} };
+var FG = window.floodgate;
 
-window.mute.testDelay = function () {
+FG.testDelay = function () {
   console.log("--- getUserID.js ---");
-  console.log("current userID is", window.mute.getUserID());
-  console.log(typeof window.mute.getUserID() === "string");
-  console.log(typeof window.mute.getRandomToken() === "string");
-  console.log(window.mute.getRandomToken() !== window.mute.getRandomToken());
-  console.log(window.mute.getUserID() === window.mute.getUserID());
+  console.log("current userID is", FG.getUserID());
+  console.log(typeof FG.getUserID() === "string");
+  console.log(typeof FG.getRandomToken() === "string");
+  console.log(FG.getRandomToken() !== FG.getRandomToken());
+  console.log(FG.getUserID() === FG.getUserID());
 }
 
 $(function() {
 
   console.log("=== Tests running ===");
 
-  console.log(window.mute.filterTweets !== undefined);
-  console.log(window.mute.imageHide !== undefined);
-  console.log(window.mute.addStylesheet !== undefined);
-  console.log(window.mute.getUserID !== undefined);
-  console.log(window.mute.getRandomToken !== undefined);
-  console.log(window.mute.setSettings !== undefined);
+  console.log(FG.filterTweets !== undefined);
+  console.log(FG.imageHide !== undefined);
+  console.log(FG.addStylesheet !== undefined);
+  console.log(FG.getUserID !== undefined);
+  console.log(FG.getRandomToken !== undefined);
+  console.log(FG.setSettings !== undefined);
 
   console.log("--- words.js ---");
-  console.log(typeof window.mute.allFilters === "object");
-  console.log(window.mute.allFilters.racialSlurs[0] === "test-stub-sibmeivmsobmsovnwodskfwdkvob");
+  console.log(typeof FG.allFilters === "object");
+  console.log(FG.allFilters.racialSlurs[0] === "test-stub-sibmeivmsobmsovnwodskfwdkvob");
 
   console.log("--- imageHide.js ---");
   var stub = $("body");
   console.log(".getImages()");
-  console.log( window.mute.imageHide.getImages(stub) instanceof jQuery);
-  console.log( window.mute.imageHide.getImages(stub).length > 0 ); // page dependency
+  console.log( FG.imageHide.getImages(stub) instanceof jQuery);
+  console.log( FG.imageHide.getImages(stub).length > 0 ); // page dependency
   console.log(".getElements()");
-  console.log( window.mute.imageHide.getElements(stub) instanceof jQuery);
-  console.log( window.mute.imageHide.getElements(stub).length > 0 ); // page dependency
+  console.log( FG.imageHide.getElements(stub) instanceof jQuery);
+  console.log( FG.imageHide.getElements(stub).length > 0 ); // page dependency
   console.log(".getHeight()");
-  console.log( typeof window.mute.imageHide.getHeight($("img")[0]) === "number");
+  console.log( typeof FG.imageHide.getHeight($("img")[0]) === "number");
 
   // console.log(".imageHide()");
-  // window.mute.imageHide($(".tweet, .stream-item-content"));
+  // FG.imageHide($(".tweet, .stream-item-content"));
 
-  window.setTimeout(window.mute.testDelay, 2000);
+  window.setTimeout(FG.testDelay, 2000);
 
 });

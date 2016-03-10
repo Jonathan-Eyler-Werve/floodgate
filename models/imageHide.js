@@ -2,23 +2,24 @@
 
 // takes a jquery object, modifies DOM element, returns nothing
 
-if (window.mute === undefined) { window.mute = {} };
+if (window.floodgate === undefined) { window.floodgate = {} };
+var FG = window.floodgate;
 
-window.mute.imageHide = function (target) {
+FG.imageHide = function (target) {
 
   target = $(target)
 
   var elements, images, minSize;
 
-  images = window.mute.imageHide.getImages(target);
-  elements = window.mute.imageHide.getElements(target);
+  images = FG.imageHide.getImages(target);
+  elements = FG.imageHide.getElements(target);
   minSize = 20
 
   $.each(images, function(index, image){
 
     if (image !== undefined) {
       $(image).attr("width", $(image).width());
-      $(image).attr("height", window.mute.imageHide.getHeight(image));
+      $(image).attr("height", FG.imageHide.getHeight(image));
       $(image).css("background-color", "#D8F6CE");
       $(image).attr("src", "");
       $(image).attr("srcset", "");
@@ -40,15 +41,15 @@ window.mute.imageHide = function (target) {
   // console.log("mute.imageHide completes")
 };
 
-window.mute.imageHide.getImages = function (target) {
+FG.imageHide.getImages = function (target) {
   return target.find("img");
 };
 
-window.mute.imageHide.getElements = function (target) {
+FG.imageHide.getElements = function (target) {
   return target.find("*"); // performance optimization here?
 };
 
-window.mute.imageHide.getHeight = function (image) {
+FG.imageHide.getHeight = function (image) {
   if ( $(image).height() >= 200 ) {
     return 200
   }

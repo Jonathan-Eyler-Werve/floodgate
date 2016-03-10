@@ -1,7 +1,8 @@
 // bg.settings.js
 
 if (window.bg === undefined) { window.bg = {} };
-BG = window.bg;
+
+var BG = window.bg;
 
 BG.getSettings = function () {
   chrome.storage.sync.get('settings', function(items) {
