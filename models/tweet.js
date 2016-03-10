@@ -3,7 +3,9 @@
 if (window.floodgate === undefined) { window.floodgate = {} };
 var FG = window.floodgate;
 
-FG.filterTweets = function (triggerWords) {
+// takes action as string - "mute", "hide"
+// takes filter as array of words
+FG.filterTweets = function (action, filter) {
 
   FG.filterTweets.matchFound = false
 
@@ -26,7 +28,7 @@ FG.filterTweets = function (triggerWords) {
       var tweetName = $(tweet).find(".fullname").text().toLowerCase();
       var tweetRetweeterName = $(tweet).find(".js-user-profile-link").text().toLowerCase();
 
-      $.each(triggerWords, function(index, word){
+      $.each(filter, function(index, word){
 
         var regex = new RegExp('(\\b|#|"|\')' + word.toLowerCase() + '(\\b|s|es|ies|able|ed|ing|d|\'s|"|\')');
         var match = regex.test(tweetContent + " " + tweetName + " " + tweetRetweeterName);
@@ -38,7 +40,7 @@ FG.filterTweets = function (triggerWords) {
           var selectorForMute = ".AdaptiveMedia, button, iframe, .stream-item-footer, .stream-item-header, .tweet-content, .tweet-context, .tweet-text";
           $(tweet).find(selectorForMute).addClass("mute-this");
 
-          FG.filterTweets.muteStuff(tweet, tweetContent);
+          if (action === "mute") { FG.filterTweets.muteStuff(tweet, tweetContent); };
           FG.filterTweets.matchFound = true;
         }
 
