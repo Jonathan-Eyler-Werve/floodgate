@@ -15,10 +15,13 @@ FG.getSettings = function () {
       FG.initialSettings = JSON.parse(JSON.stringify(items.settings));
       console.log("Settings gotten:", FG.settings);
     } else {
+
       // initalize the settings object
       FG.settings = {};
       FG.settings.initialized = false;
       FG.settings.activeFilters = {};
+      FG.settings.rules = [];
+
       chrome.storage.sync.set({settings: FG.settings}, function() {
         console.log("I synced these settings from .getSettings");
         console.log(FG.settings)

@@ -5,23 +5,29 @@ var FG = window.floodgate;
 
 FG.runFilters = function () {
 
+  // stash the system time
+  var time = new Date();
+  var hour = time.getHours();
+
   // poll quickly until settings are ready
   if (FG.settings === undefined) {
     window.setTimeout(FG.runFilters, 50);
-    console.log("Fast polling until chrome.storage responds");
     return
   };
 
-  // start tutorial if user state is not initialized
-  if (FG.settings.initialized === false) {
-    FG.launchSettingsPage();
-    return
-  }
-
   // synced settings.activeFilters has {key: boolean}, the local FG.allFilters has {key: array}
   // keys are the same
-
   var activeFilters = FG.settings.activeFilters
+
+  // stub for dev
+  console.log(FG.settings.rules);
+  FG.settings.rules = [];
+  var newRule = new Rule ("always", "pokemon", "mute");
+  FG.settings.rules.push(newRule);
+  console.log(FG.settings.rules);
+
+  // EXAMPLE FG.settings.rules
+  // [ {action: "mute", filter: "filterName", scope: "always"} ]
 
   // set number of filters so we know which filter is running last
   FG.numberOfFilters = 0
