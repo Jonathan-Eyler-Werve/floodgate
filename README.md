@@ -1,6 +1,6 @@
 # Floodgate
 
-[Trigger warning: we're discussing abuse and harassment.]
+Content: we'll be discussing abuse and harassment.
 
 ## Summary
 
