@@ -65,7 +65,6 @@ BG.tutorialButtons = function () {
     BG.settings.initialized = true;
     $("#tutorial--text").replaceWith(BG.textTutorialConfirm);
     $(".settings__footer button").hide();
-
   });
 
 }

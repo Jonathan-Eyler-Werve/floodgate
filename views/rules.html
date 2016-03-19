@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width"/>
+
+    <title>Floodgate</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/assets/vendor/foundation.min.css">
+    <link rel="stylesheet" href="/assets/stylesheets/settings.css">
+
+    <!-- Font Files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- JS Files -->
+    <script src="/assets/vendor/jquery-2.2.0.min.js"></script>
+    <script src="/assets/vendor/handlebars-v4.0.5.js"></script>
+
+    <script src="/views/bg.tutorial.js"></script>
+    <script src="/models/bg.settings.js"></script>
+
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="settings">
+    <div class="row">
+      <div class="small-12 columns centered">
+
+        <div class="row settings__header">
+            <div class="small-10 columns">
+              <h1>Floodgate</h1>
+            </div>
+            <div class="small-1 columns align-right">
+              <i class="btn--close-page fa fa-times fa-large"></i>
+            </div>
+        </div>
+
+        <div class="row settings__main">
+
+          <div class="large-5 columns flex">
+            <div id="tutorial--text">
+            </div>
+          </div>
+
+          <div class="large-6 columns">
+            <ul class="settings__checkbox" id="tutorial--filters">
+
+            <ul>
+          </div>
+        </div>
+
+        <div class="row settings__footer -last">
+          <div class="large-5 large-push-1 columns">
+            <button class="btn--close-page button large expanded radius secondary hollow settings__save">Do this later</button>
+          </div>
+
+          <div class="large-5 large-pull-1 columns">
+            <button id="btn--done" class="button large expanded radius settings__save">Done</button>
+          </div>
+
+
+            <!--
+              <div class="large-5 large-pull-1 columns">
+              <button class="button large expanded radius settings__save">Next &nbsp <i class="fa fa-arrow-right"></i></button>
+              </div>
+            -->
+        </div>
+
+        <div class="row credits">
+          <p>Made with love by <a href="http://www.civicworkbench.com">Civic Workbench</a></p>
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+</html>
+
+
